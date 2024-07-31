@@ -1,0 +1,16 @@
+.header {
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_dark {
+  background-color: black;
+}
+
+.sticky {
+  position: sticky;
+  top: 20px;
+}
+
