@@ -1,6 +1,8 @@
-import type { Meta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { LightModeBtn } from './LigthModeBtn';
+
+type Story = StoryObj<typeof meta>;
 
 const meta: Meta<typeof LightModeBtn> = {
   title: 'Example/LightModeBtn',
@@ -10,4 +12,4 @@ const meta: Meta<typeof LightModeBtn> = {
 
 export default meta;
 
-export const LightModeBtnCode = {};
+export const LightModeBtnCode: Story = {};
