@@ -1,0 +1,13 @@
+.btn {
+  background: rgb(198, 198, 237);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background: grey;
+  opacity: .5;
+  cursor: inherit;
+}
