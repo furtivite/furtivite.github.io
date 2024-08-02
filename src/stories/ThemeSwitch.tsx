@@ -2,7 +2,7 @@ import React from 'react';
 
 import './theme-switch-btn.css';
 
-interface LightModeBtnProps {
+interface ThemeSwitchBtnProps {
   isDark: boolean;
   onClick: () => void;
 }
@@ -10,7 +10,7 @@ interface LightModeBtnProps {
 /**
  * Компонет ThemeSwitchBtn
  */
-export const ThemeSwitchBtn = ({ isDark, onClick }: LightModeBtnProps): React.ReactElement => {
+export const ThemeSwitchBtn = ({ isDark, onClick }: ThemeSwitchBtnProps): React.ReactElement => {
   return (
     <button className="light-mode-btn" onClick={onClick}>
       <img
