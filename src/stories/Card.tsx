@@ -1,18 +1,20 @@
 import React from 'react';
 
-import './short-card.css';
+import './card.css';
+import { Btn } from './Btn';
 
-interface ShortCardProps {
+interface CardProps {
   categoryName: 'Транспорт' | 'Продукты';
   title: string;
   price: number;
   description: string;
+  date: string;
 }
 
 /**
- * Компонет короткой карты
+ * Компонет Полной карты
  */
-export const ShortCard = ({ categoryName, title, price, description }: ShortCardProps): React.ReactElement => (
+export const Card = ({ categoryName, title, price, description, date }: CardProps): React.ReactElement => (
   <article className="card">
     <header className="flex">
       <div className="flex">
@@ -36,6 +38,10 @@ export const ShortCard = ({ categoryName, title, price, description }: ShortCard
         <span>₽</span>
       </p>
     </header>
-    <p>{description.slice(0, 100).slice(0, -3) + '...'}</p>
+    <p>{description}</p>
+    <footer className="flex">
+      <p>{date}</p>
+      <Btn text="Редактировать" onClick={() => console.log('Ты редактируешь')} isDisabled />
+    </footer>
   </article>
 );
