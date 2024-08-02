@@ -2,7 +2,7 @@ import React from 'react';
 
 import './header.css';
 import { Logo } from './Logo';
-import { LightModeBtn } from './LigthModeBtn';
+import { ThemeSwitchBtn } from './ThemeSwitch';
 
 /**
  * Компонет header
@@ -13,7 +13,7 @@ export const Header = (): React.ReactElement => {
   return (
     <header className={`header${isDark ? ' header_dark ' : ' '}sticky`}>
       <Logo onDark={isDark} />
-      <LightModeBtn isDark={isDark} onClick={() => setIsDark(!isDark)} />
+      <ThemeSwitchBtn isDark={isDark} onClick={() => setIsDark(!isDark)} />
     </header>
   );
 };
