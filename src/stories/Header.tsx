@@ -7,18 +7,18 @@ import { ThemeSwitchBtn } from './ThemeSwitch';
 
 interface HeaderProps {
   isDark: boolean;
-  setIsDark: React.Dispatch<React.SetStateAction<boolean>>;
+  themeSwitchHandler: () => void;
 }
 
 /**
- * Компонет header
+ * Компонент "Хедер"
  */
-export const Header = ({ isDark, setIsDark }: HeaderProps): React.ReactElement => {
+export const Header = ({ isDark, themeSwitchHandler }: HeaderProps): React.ReactElement => {
   return (
     <header className={clsx('header', 'sticky', isDark && 'header_dark')} style={{ top: '-32px' }}>
       {/* styles для демонстрации sticky в шапке */}
       <Logo onDark={isDark} />
-      <ThemeSwitchBtn isDark={isDark} onClick={() => setIsDark(!isDark)} />
+      <ThemeSwitchBtn isDark={isDark} onClick={themeSwitchHandler} />
     </header>
   );
 };
