@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Btn } from './Btn';
+import { Btn as BtnComponent } from './Btn';
 
 type Story = StoryObj<typeof meta>;
 
-const meta: Meta<typeof Btn> = {
+const meta: Meta<typeof BtnComponent> = {
   title: 'Example/Btn',
-  component: Btn,
+  component: BtnComponent,
   tags: ['autodocs'],
 };
 
 export default meta;
 
-export const BtnCode: Story = {
+export const Btn: Story = {
   args: {
     text: 'Кнопка',
     onClick: () => console.log('КЛИК'),
