@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ShortCard } from './ShortCard';
+import { ShortCard as ShortCardComponent } from './ShortCard';
 
 type Story = StoryObj<typeof meta>;
 
-const meta: Meta<typeof ShortCard> = {
+const meta: Meta<typeof ShortCardComponent> = {
   title: 'Example/ShortCard',
-  component: ShortCard,
+  component: ShortCardComponent,
   tags: ['autodocs'],
 };
 
 export default meta;
 
-export const ShortCardCode: Story = {
+export const ShortCard: Story = {
   args: {
     title: 'АЗС',
     categoryName: 'Транспорт',

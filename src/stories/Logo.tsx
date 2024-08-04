@@ -1,12 +1,12 @@
 import React from 'react';
 
 interface LogoProps {
-  /** Флаг-признак использования на темной теме */
+  /** Флаг тёмной темы */
   onDark: boolean;
 }
 
 /**
- * Компонет логотипа
+ * Компонент "Логотип"
  */
 export const Logo = ({ onDark = false }: LogoProps): React.ReactElement => (
   <a href="#">
