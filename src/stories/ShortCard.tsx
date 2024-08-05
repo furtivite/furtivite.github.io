@@ -10,7 +10,7 @@ interface ShortCardProps {
 }
 
 /**
- * Компонет короткой карты
+ * Компонент "Карточка с кратким отображением операции"
  */
 export const ShortCard = ({ categoryName, title, price, description }: ShortCardProps): React.ReactElement => (
   <article className="card">
