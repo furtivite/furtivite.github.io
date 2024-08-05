@@ -4,15 +4,20 @@ import './card.css';
 import { Btn } from './Btn';
 
 interface CardProps {
+  /** Категория */
   categoryName: 'Транспорт' | 'Продукты';
+  /** Заголовок */
   title: string;
+  /** Цена */
   price: number;
+  /** Описание */
   description: string;
+  /** Дата */
   date: string;
 }
 
 /**
- * Компонет Полной карты
+ * Компонент "Карточка с полным отображением операции"
  */
 export const Card = ({ categoryName, title, price, description, date }: CardProps): React.ReactElement => (
   <article className="card">

@@ -1,16 +1,16 @@
 import type { Meta } from '@storybook/react';
 
-import { Logo } from './Logo';
+import { Logo as LogoComponent } from './Logo';
 
-const meta: Meta<typeof Logo> = {
+const meta: Meta<typeof LogoComponent> = {
   title: 'Example/Logo',
-  component: Logo,
+  component: LogoComponent,
   tags: ['autodocs'],
 };
 
 export default meta;
 
-export const LogoCode = {
+export const Logo = {
   args: {
     onDark: false,
   },

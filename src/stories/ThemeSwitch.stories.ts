@@ -1,15 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ThemeSwitchBtn } from './ThemeSwitch';
+import { ThemeSwitchBtn as ThemeSwitchBtnComponent } from './ThemeSwitch';
 
 type Story = StoryObj<typeof meta>;
 
-const meta: Meta<typeof ThemeSwitchBtn> = {
+const meta: Meta<typeof ThemeSwitchBtnComponent> = {
   title: 'Example/ThemeSwitchBtn',
-  component: ThemeSwitchBtn,
+  component: ThemeSwitchBtnComponent,
   tags: ['autodocs'],
 };
 
 export default meta;
 
-export const ThemeSwitchBtnCode: Story = {};
+export const ThemeSwitchBtn: Story = {
+  args: {
+    isDark: false,
+    onClick: () => console.log('КЛИК'),
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [{ name: 'dark', value: '#ccc' }],
+    },
+  },
+};

@@ -4,16 +4,22 @@ import { Btn } from './Btn';
 import './modal.css';
 
 interface ModalComponentProps {
+  /** Признак видимости компонента */
   showModal: boolean;
+  /** Обработчик закрытия */
   closeHandler: () => void;
+  /** Заголовок */
   title: string;
+  /** Тело */
   children: React.ReactNode;
+  /** Целевая кнопка */
   titleButton: string;
+  /** Обработчик целевой кнопки */
   onClickButton: () => void;
 }
 
 /**
- * Компонет "Модальное окно"
+ * Компонент "Модальное окно"
  */
 export const Modal = ({
   showModal,

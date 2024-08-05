@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Layout } from './Layout';
+import { Layout as LayoutComponent } from './Layout';
 
 type Story = StoryObj<typeof meta>;
 
-const meta: Meta<typeof Layout> = {
+const meta: Meta<typeof LayoutComponent> = {
   title: 'Example/Layout',
-  component: Layout,
+  component: LayoutComponent,
   tags: ['autodocs'],
 };
 
 export default meta;
 
-export const LayoutCode: Story = {
+export const Layout: Story = {
   args: {
     children: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla doloribus, beatae illum eveniet aliquam, ipsum officia
 corporis culpa minima similique qui debitis illo minus enim magni fugiat laudantium officiis tempore aperiam quaerat
