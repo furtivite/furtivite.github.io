@@ -8,7 +8,9 @@ interface ThemeSwitchBtnProps {
 }
 
 /**
- * Компонет ThemeSwitchBtn
+ * Компонент "ThemeSwitchBtn"
+ *
+ * Служит для переключения светлой и темной темы в приложении
  */
 export const ThemeSwitchBtn = ({ isDark, onClick }: ThemeSwitchBtnProps): React.ReactElement => {
   return (
