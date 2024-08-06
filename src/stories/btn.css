@@ -2,8 +2,9 @@
   background: #1358bf;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 4px 8px;
   cursor: pointer;
+  font-size: 12px;
 }
 
 .btn:disabled {
