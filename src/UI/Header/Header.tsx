@@ -2,8 +2,8 @@ import React from 'react';
 import clsx from 'clsx';
 
 import './header.css';
-import { Logo } from './Logo';
-import { ThemeSwitchBtn } from './ThemeSwitch';
+import { Logo } from '../Logo/Logo';
+import { ThemeSwitchBtn } from '../ThemeSwitchBtn/ThemeSwitch';
 
 interface HeaderProps {
   isDark: boolean;

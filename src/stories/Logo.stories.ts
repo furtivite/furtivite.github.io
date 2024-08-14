@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
 
-import { Logo as LogoComponent } from './Logo';
+import { Logo as LogoComponent } from '../UI/Logo/Logo';
 
 const meta: Meta<typeof LogoComponent> = {
   title: 'Example/Logo',

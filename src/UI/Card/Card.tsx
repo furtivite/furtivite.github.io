@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './card.css';
-import { Btn } from './Btn';
+import { Btn } from '../Btn/Btn';
 
 interface CardProps {
   /** Категория */
@@ -38,10 +38,7 @@ export const Card = ({ categoryName, title, price, description, date }: CardProp
         </div>
         <h1>{title}</h1>
       </div>
-      <p>
-        {price}
-        <span>₽</span>
-      </p>
+      <p>{price}₽</p>
     </header>
     <p>{description}</p>
     <footer className="flex">

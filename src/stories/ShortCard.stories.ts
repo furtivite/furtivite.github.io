@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ShortCard as ShortCardComponent } from './ShortCard';
+import { ShortCard as ShortCardComponent } from '../UI/ShortCard/ShortCard';
 
 type Story = StoryObj<typeof meta>;
 
