@@ -38,10 +38,7 @@ export const Card = ({ categoryName, title, price, description, date }: CardProp
         </div>
         <h1>{title}</h1>
       </div>
-      <p>
-        {price}
-        <span>₽</span>
-      </p>
+      <p>{price}₽</p>
     </header>
     <p>{description}</p>
     <footer className="flex">
