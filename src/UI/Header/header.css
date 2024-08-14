@@ -1,0 +1,19 @@
+.header {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  background: white;
+}
+
+.header_dark {
+  background-color: black;
+  border-bottom: 1px solid white;
+}
+
+.sticky {
+  position: sticky;
+  top: 0px;
+}
+

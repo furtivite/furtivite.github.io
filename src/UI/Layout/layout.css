@@ -1,0 +1,10 @@
+/* .layout {} */
+
+.layout_dark {
+  color: white;
+  background: black;
+}
+
+.layout__content {
+  padding-top: 2rem;
+}

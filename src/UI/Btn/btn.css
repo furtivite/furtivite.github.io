@@ -1,0 +1,14 @@
+.btn {
+  background: #1358bf;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn:disabled {
+  background: #87b0ed;
+  opacity: .5;
+  cursor: inherit;
+}
