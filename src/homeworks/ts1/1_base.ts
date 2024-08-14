@@ -19,9 +19,9 @@ const transformRegexp =
   /(matrix\(-?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, )(-?\d+(\.\d+)?), (-?\d+(\.\d+)?)\)/;
 
 type TTransform = {
-  x: number,
-  y: number,
-}
+  x: number;
+  y: number;
+};
 
 export const getTransformFromCss = (transformCssString: string): TTransform => {
   const data = transformCssString.match(transformRegexp);
@@ -63,7 +63,8 @@ export const hex2rgb = (color: string): TColor => {
 
 type TSomeArrItem = { value: unknown; number: number };
 
-export const getNumberedArray = (arr: TSomeArrItem[]): TSomeArrItem[] => arr.map((value, number) => ({ value, number }));
+export const getNumberedArray = (arr: TSomeArrItem[]): TSomeArrItem[] =>
+  arr.map((value, number) => ({ value, number }));
 export const toStringArray = (arr: TSomeArrItem[]): string[] => arr.map(({ value, number }) => `${value}_${number}`);
 
 interface ICustomer {
@@ -73,7 +74,7 @@ interface ICustomer {
   id?: number;
 }
 
-export const transformCustomers = (customers: unknown[]): {} => {
+export const transformCustomers = (customers: unknown[]): object | unknown => {
   return customers.reduce((acc: ICustomer[], customer: ICustomer): ICustomer[] => {
     acc[customer.id] = { name: customer.name, age: customer.age, isSubscribed: customer.isSubscribed };
     return acc;
