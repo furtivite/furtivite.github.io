@@ -14,7 +14,7 @@ interface BtnProps {
 /**
  * Компонент "Кнопка"
  */
-export const Btn = ({ text, onClick, isDisabled = false }: BtnProps): React.ReactElement => (
+export const Btn = ({ text, onClick, isDisabled }: BtnProps): React.ReactElement => (
   <button className="btn" onClick={onClick} disabled={isDisabled}>
     {text}
   </button>

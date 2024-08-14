@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Card as CardComponent } from './Card';
+import { Card as CardComponent } from '../UI/Card/Card';
 
 type Story = StoryObj<typeof meta>;
 
