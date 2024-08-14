@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ThemeSwitchBtn as ThemeSwitchBtnComponent } from '../UI/ThemeSwitchBtn/ThemeSwitch';
+import { ThemeSwitchBtn as ThemeSwitchBtnComponent } from './ThemeSwitch';
 
 type Story = StoryObj<typeof meta>;
 

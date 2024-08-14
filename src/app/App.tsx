@@ -1,27 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Card, Layout } from '../UI';
+// Интерфейсы импортируются отдельно
+import { CardProps } from '../UI/Card/interfaces';
+import { AppContext, defaultValue, IDefaultValue } from './Context';
 
-function App() {
-  const aboutMe: string[] = [
-    'Привет, меня зовут Егор',
-    'Работаю как разработчик интерфейсов в СберКорусе и помогаю проекту doka.guide',
-    'Пишу на JS/TS, пользуюсь 11ty, Angular и React',
-    'Хочу больше узнать про React, Storybook и Jest'
+export const App = (): React.ReactElement => {
+  const [currentContext, setCurrentContext] = React.useState<IDefaultValue>(defaultValue);
+
+  const cards: CardProps[] = [
+    {
+      title: 'Карточка',
+      categoryName: 'Транспорт',
+      price: 100,
+      description: 'Описание',
+      date: '2 мая 2015',
+    },
+    {
+      title: 'Карточка 2',
+      categoryName: 'Транспорт',
+      price: 100,
+      description: 'Описание',
+      date: '2 мая 2015',
+    },
   ];
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        {aboutMe.map((item, index) => (
-          <p key={index}>
-            {item}
-          </p>
-        ))}
-      </header>
-    </div>
+    <AppContext.Provider value={currentContext}>
+      <Layout>
+        <div className="flex-column gap-10 container">
+          {cards.map((item) => {
+            const { title, categoryName, price, description, date } = item;
+            return (
+              <Card
+                key={title}
+                title={title}
+                categoryName={categoryName}
+                price={price}
+                description={description}
+                date={date}
+              />
+            );
+          })}
+        </div>
+      </Layout>
+    </AppContext.Provider>
   );
-}
-
-export default App;
+};

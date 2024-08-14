@@ -36,3 +36,17 @@
         transform: rotate(360deg);
     }
 }
+
+.container {
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.gap-10 {
+    gap: 10px;
+}

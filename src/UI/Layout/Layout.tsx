@@ -5,7 +5,7 @@ import './layout.css';
 import { Header } from '../Header/Header';
 
 interface LayoutProps {
-  children: React.ReactFragment;
+  children: JSX.Element | string;
 }
 
 /**

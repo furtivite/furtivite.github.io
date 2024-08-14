@@ -2,19 +2,7 @@ import React from 'react';
 
 import './card.css';
 import { Btn } from '../Btn/Btn';
-
-interface CardProps {
-  /** Категория */
-  categoryName: 'Транспорт' | 'Продукты';
-  /** Заголовок */
-  title: string;
-  /** Цена */
-  price: number;
-  /** Описание */
-  description: string;
-  /** Дата */
-  date: string;
-}
+import { CardProps } from './interfaces';
 
 /**
  * Компонент "Карточка с полным отображением операции"
