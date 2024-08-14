@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 import './layout.css';
-import { Header } from './Header';
+import { Header } from '../Header/Header';
 
 interface LayoutProps {
   children: React.ReactFragment;

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Layout as LayoutComponent } from './Layout';
+import { Layout as LayoutComponent } from '../UI/Layout/Layout';
 
 type Story = StoryObj<typeof meta>;
 

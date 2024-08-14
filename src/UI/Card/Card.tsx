@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './card.css';
-import { Btn } from './Btn';
+import { Btn } from '../Btn/Btn';
 
 interface CardProps {
   /** Категория */
