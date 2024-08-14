@@ -7,7 +7,7 @@ function App() {
     'Привет, меня зовут Егор',
     'Работаю как разработчик интерфейсов в СберКорусе и помогаю проекту doka.guide',
     'Пишу на JS/TS, пользуюсь 11ty, Angular и React',
-    'Хочу больше узнать про React, Storybook и Jest'
+    'Хочу больше узнать про React, Storybook и Jest',
   ];
 
   return (
@@ -15,9 +15,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         {aboutMe.map((item, index) => (
-          <p key={index}>
-            {item}
-          </p>
+          <p key={index}>{item}</p>
         ))}
       </header>
     </div>
