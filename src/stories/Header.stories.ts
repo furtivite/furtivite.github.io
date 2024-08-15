@@ -15,6 +15,5 @@ export default meta;
 export const Header: Story = {
   args: {
     isDark: false,
-    themeSwitchHandler: null,
   },
 };

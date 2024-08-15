@@ -1,27 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Layout } from 'src/UI/Layout/Layout';
+import { Modal } from 'src/UI/Modal/Modal';
+import { ShortCard } from 'src/UI/ShortCard/ShortCard';
+import { ModalForm } from 'src/UI/ModaForm/ModalForm';
+import { Context } from './Context';
 
-function App() {
-  const aboutMe: string[] = [
-    'Привет, меня зовут Егор',
-    'Работаю как разработчик интерфейсов в СберКорусе и помогаю проекту doka.guide',
-    'Пишу на JS/TS, пользуюсь 11ty, Angular и React',
-    'Хочу больше узнать про React, Storybook и Jest'
-  ];
+export const App = (): React.ReactElement => {
+  const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
+  const [inputValue, setInputValue] = React.useState<string | number | readonly string[]>('');
+
+  const handleModalFormClick = (): void => {
+    setIsModalOpen(true);
+  };
+
+  const [theme, setTheme] = React.useState<'light' | 'dark'>('light');
+  const themeSwitchHandler = (): void => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else setTheme('light');
+  };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        {aboutMe.map((item, index) => (
-          <p key={index}>
-            {item}
-          </p>
-        ))}
-      </header>
-    </div>
-  );
-}
+    <Context.Provider value={{ theme, themeSwitchHandler }}>
+      <Layout>
+        <ModalForm inputValue={inputValue} setInputValue={setInputValue} handleModalFormClick={handleModalFormClick} />
 
-export default App;
+        <Modal
+          showModal={isModalOpen}
+          title="Заголовок модального окна"
+          closeHandler={() => {
+            setIsModalOpen(false);
+            setInputValue('');
+          }}
+          titleButton="Кнопка"
+          onClickButton={() => console.log('КЛИК')}
+        >
+          <p>{inputValue}</p>
+        </Modal>
+
+        {/* TODO: Сделать перебором   */}
+        <div className="flex-column gap-16">
+          <ShortCard categoryName="Транспорт" price={1500} description="Шиномонтаж" title="Колесо монтаж" />
+          <ShortCard categoryName="Продукты" price={500} description="Ветчина" title="Дикси" />
+        </div>
+      </Layout>
+    </Context.Provider>
+  );
+};

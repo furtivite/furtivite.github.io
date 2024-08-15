@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Btn } from '../Btn/Btn';
 
 import './modal.css';
