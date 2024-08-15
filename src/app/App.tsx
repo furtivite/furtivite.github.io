@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css';
-import { Layout } from 'src/UI/Layout/Layout';
-import { Modal } from 'src/UI/Modal/Modal';
-import { ShortCard } from 'src/UI/ShortCard/ShortCard';
-import { ModalForm } from 'src/UI/ModaForm/ModalForm';
 import { Context } from './Context';
+import { Layout, Modal, ModalForm, ShortCard } from '../UI';
+// Интерфейсы экспортируются отдельно
+import { IShortCard } from '../UI/ShortCard/ShortCard';
 
 export const App = (): React.ReactElement => {
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
@@ -20,6 +19,28 @@ export const App = (): React.ReactElement => {
       setTheme('dark');
     } else setTheme('light');
   };
+
+  const cards: IShortCard[] = [
+    {
+      categoryName: 'Транспорт',
+      title: 'Шиномонтаж',
+      price: 1500,
+      description: 'Колесо монтаж',
+    },
+    {
+      categoryName: 'Продукты',
+      title: 'Ветчина',
+      price: 500,
+      description: 'Дикси',
+    },
+    {
+      categoryName: 'Продукты',
+      title: 'Что-то дорогое',
+      price: 150000,
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla doloribus, beatae illum eveniet aliquam, ipsum officia corporis culpa minima similique qui debitis illo minus enim magni fugiat laudantium officiis tempore aperiam quaerat dolorum!',
+    },
+  ];
 
   return (
     <Context.Provider value={{ theme, themeSwitchHandler }}>
@@ -39,10 +60,19 @@ export const App = (): React.ReactElement => {
           <p>{inputValue}</p>
         </Modal>
 
-        {/* TODO: Сделать перебором   */}
         <div className="flex-column gap-16">
-          <ShortCard categoryName="Транспорт" price={1500} description="Шиномонтаж" title="Колесо монтаж" />
-          <ShortCard categoryName="Продукты" price={500} description="Ветчина" title="Дикси" />
+          {cards.map((item: IShortCard) => {
+            const { title, categoryName, price, description } = item;
+            return (
+              <ShortCard
+                key={title}
+                categoryName={categoryName}
+                price={price}
+                description={description}
+                title={title}
+              />
+            );
+          })}
         </div>
       </Layout>
     </Context.Provider>
