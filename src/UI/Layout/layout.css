@@ -1,4 +1,6 @@
-/* .layout {} */
+.layout {
+  padding: 16px;
+}
 
 .layout_dark {
   color: white;
