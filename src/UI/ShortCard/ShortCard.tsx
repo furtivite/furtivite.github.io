@@ -2,7 +2,7 @@ import React from 'react';
 
 import './short-card.css';
 
-interface ShortCardProps {
+export interface IShortCard {
   categoryName: 'Транспорт' | 'Продукты';
   title: string;
   price: number;
@@ -12,7 +12,7 @@ interface ShortCardProps {
 /**
  * Компонент "Карточка с кратким отображением операции"
  */
-export const ShortCard = ({ categoryName, title, price, description }: ShortCardProps): React.ReactElement => (
+export const ShortCard = ({ categoryName, title, price, description }: IShortCard): React.ReactElement => (
   <article className="card">
     <header className="flex">
       <div className="flex">
