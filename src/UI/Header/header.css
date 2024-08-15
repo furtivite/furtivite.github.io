@@ -7,6 +7,7 @@
   background: white;
 }
 
+.layout_dark .header,
 .header_dark {
   background-color: black;
   border-bottom: 1px solid white;
@@ -15,5 +16,6 @@
 .sticky {
   position: sticky;
   top: 0px;
+  z-index: 100;
 }
 

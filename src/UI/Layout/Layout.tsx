@@ -16,8 +16,7 @@ export const Layout = ({ children }: LayoutProps): React.ReactElement => {
   const { theme } = React.useContext(Context);
 
   return (
-    <main className={clsx('layout', theme === 'dark' && 'layout_dark')} style={{ maxHeight: '600px' }}>
-      {/* maxHeight для демонстрации sticky в шапке */}
+    <main className={clsx('layout', theme === 'dark' && 'layout_dark')}>
       <Header isDark={theme === 'dark'} />
       <div className="layout__content">{children}</div>
     </main>
