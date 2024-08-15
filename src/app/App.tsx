@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Context } from './Context';
+import { Context, defaultContext, EThemeVariables, IContext } from './Context';
 import { Layout, Modal, ModalForm, ShortCard } from '../UI';
 // Интерфейсы экспортируются отдельно
 import { IShortCard } from '../UI/ShortCard/ShortCard';
@@ -13,11 +13,13 @@ export const App = (): React.ReactElement => {
     setIsModalOpen(true);
   };
 
-  const [theme, setTheme] = React.useState<'light' | 'dark'>('light');
+  const [contextValue, setContextValue] = React.useState<IContext>(defaultContext);
+  const { theme, lang } = contextValue;
+
   const themeSwitchHandler = (): void => {
     if (theme === 'light') {
-      setTheme('dark');
-    } else setTheme('light');
+      setContextValue({ ...contextValue, theme: EThemeVariables.DARK });
+    } else setContextValue({ ...contextValue, theme: EThemeVariables.LIGHT });
   };
 
   const cards: IShortCard[] = [
@@ -43,7 +45,7 @@ export const App = (): React.ReactElement => {
   ];
 
   return (
-    <Context.Provider value={{ theme, themeSwitchHandler }}>
+    <Context.Provider value={{ theme, lang, themeSwitchHandler }}>
       <Layout>
         <ModalForm inputValue={inputValue} setInputValue={setInputValue} handleModalFormClick={handleModalFormClick} />
 
