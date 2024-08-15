@@ -1,10 +1,10 @@
 import React from 'react';
+import { Context } from '../../app/Context';
 
 import './theme-switch-btn.css';
 
 interface ThemeSwitchBtnProps {
   isDark: boolean;
-  onClick: () => void;
 }
 
 /**
@@ -12,9 +12,11 @@ interface ThemeSwitchBtnProps {
  *
  * Служит для переключения светлой и темной темы в приложении
  */
-export const ThemeSwitchBtn = ({ isDark, onClick }: ThemeSwitchBtnProps): React.ReactElement => {
+export const ThemeSwitchBtn = ({ isDark }: ThemeSwitchBtnProps): React.ReactElement => {
+  const { themeSwitchHandler } = React.useContext(Context);
+
   return (
-    <button className="light-mode-btn" onClick={onClick}>
+    <button className="light-mode-btn" onClick={themeSwitchHandler}>
       <img
         width="20"
         height="20"
