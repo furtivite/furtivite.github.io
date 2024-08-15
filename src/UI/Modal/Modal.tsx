@@ -30,6 +30,12 @@ export const Modal = ({
   titleButton,
   onClickButton,
 }: ModalComponentProps): React.ReactElement => {
+  React.useEffect(() => {
+    if (showModal) {
+      document.querySelector('body').style.overflowY = 'hidden';
+    } else document.querySelector('body').style.overflowY = 'auto';
+  }, [showModal]);
+
   if (!showModal) return null;
 
   return (
