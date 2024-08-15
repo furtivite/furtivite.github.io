@@ -36,6 +36,6 @@ export const ShortCard = ({ categoryName, title, price, description }: ShortCard
         <span>₽</span>
       </p>
     </header>
-    <p>{description.slice(0, 100).slice(0, -3) + '...'}</p>
+    <p>{description.length > 100 ? description.slice(0, 100).slice(0, -3) + '...' : description}</p>
   </article>
 );
