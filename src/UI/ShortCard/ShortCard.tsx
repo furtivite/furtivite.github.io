@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './short-card.css';
+import '../../app/App.css';
 
 export interface IShortCard {
   categoryName: 'Транспорт' | 'Продукты';
@@ -36,6 +37,8 @@ export const ShortCard = ({ categoryName, title, price, description }: IShortCar
         <span>₽</span>
       </p>
     </header>
-    <p>{description.length > 100 ? description.slice(0, 100).slice(0, -3) + '...' : description}</p>
+    <p className="margin-top-8">
+      {description.length > 100 ? description.slice(0, 100).slice(0, -3) + '...' : description}
+    </p>
   </article>
 );

@@ -18,6 +18,10 @@
   gap: 8px;
 }
 
+.margin-top-8 {
+  margin-top: 8px;
+}
+
 .margin-bottom-16 {
   margin-bottom: 16px;
 }
@@ -50,10 +54,20 @@
 
 /* States */
 
+body {
+  background: rgb(211, 211, 211);
+}
+
 .modal-open {
   overflow-y: hidden;
 }
 
 a {
   text-decoration: none;
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-bottom: 16px;
 }

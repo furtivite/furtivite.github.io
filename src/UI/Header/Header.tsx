@@ -15,6 +15,7 @@ interface HeaderProps {
 /**
  * Компонент "Хедер"
  */
+
 export const Header = ({ isDark }: HeaderProps): React.ReactElement => {
   return (
     <header className={clsx('header', 'sticky', isDark && 'header_dark')}>
