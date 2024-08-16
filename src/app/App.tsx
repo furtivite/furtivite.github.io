@@ -6,6 +6,8 @@ import { Context, defaultContext, EThemeVariables, IContext } from './Context';
 import { Layout, Modal, ModalForm, ShortCard } from '../UI';
 // Интерфейсы экспортируются отдельно
 import { IShortCard } from '../UI/ShortCard/ShortCard';
+import { create } from 'domain';
+import { createPortal } from 'react-dom';
 
 export const App = (): React.ReactElement => {
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
@@ -54,18 +56,21 @@ export const App = (): React.ReactElement => {
         <p>{t('appDesc')}</p>
         <ModalForm inputValue={inputValue} setInputValue={setInputValue} handleModalFormClick={handleModalFormClick} />
 
-        <Modal
-          showModal={isModalOpen}
-          title="Заголовок модального окна"
-          closeHandler={() => {
-            setIsModalOpen(false);
-            setInputValue('');
-          }}
-          titleButton="Кнопка"
-          onClickButton={() => console.log('КЛИК')}
-        >
-          <p>{inputValue}</p>
-        </Modal>
+        {createPortal(
+          <Modal
+            showModal={isModalOpen}
+            title="Заголовок модального окна"
+            closeHandler={() => {
+              setIsModalOpen(false);
+              setInputValue('');
+            }}
+            titleButton="Кнопка"
+            onClickButton={() => console.log('КЛИК')}
+          >
+            <p>{inputValue}</p>
+          </Modal>,
+          document.body
+        )}
 
         <div className="flex-column gap-16">
           {cards.map((item: IShortCard) => {
