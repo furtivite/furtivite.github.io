@@ -4,8 +4,6 @@ import './short-card.css';
 import '../../app/App.css';
 
 export interface IShortCard {
-
-interface ShortCardProps {
   categoryName: 'Транспорт' | 'Продукты';
   title: string;
   price: number;

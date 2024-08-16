@@ -18,17 +18,7 @@ export const Layout = ({ children }: LayoutProps): React.ReactElement => {
   return (
     <main className={clsx('layout', theme === 'dark' && 'layout_dark')}>
       <Header isDark={theme === 'dark'} />
-  const [isDark, setIsDark] = React.useState<boolean>(false);
-
-  const themeSwitchHandler = (): void => {
-    setIsDark(!isDark);
-  };
-
-  return (
-    <main className={clsx('layout', isDark && 'layout_dark')} style={{ maxHeight: '600px' }}>
-      {/* maxHeight для демонстрации sticky в шапке */}
-      <Header isDark={isDark} themeSwitchHandler={themeSwitchHandler} />
-      <div className="layout__content">{children}</div>
+      {children}
     </main>
   );
 };

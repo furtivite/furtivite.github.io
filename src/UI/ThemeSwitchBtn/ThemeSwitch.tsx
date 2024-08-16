@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Context } from '../../app/Context';
 
-
 import './theme-switch-btn.css';
 
 interface ThemeSwitchBtnProps {
