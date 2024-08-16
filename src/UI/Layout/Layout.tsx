@@ -18,7 +18,7 @@ export const Layout = ({ children }: LayoutProps): React.ReactElement => {
   return (
     <main className={clsx('layout', theme === 'dark' && 'layout_dark')}>
       <Header isDark={theme === 'dark'} />
-      {children}
+      <div className="layout__content">{children}</div>
     </main>
   );
 };

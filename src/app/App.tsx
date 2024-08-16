@@ -53,6 +53,7 @@ export const App = (): React.ReactElement => {
       <Layout>
         <p>{t('appDesc')}</p>
         <ModalForm inputValue={inputValue} setInputValue={setInputValue} handleModalFormClick={handleModalFormClick} />
+
         <Modal
           showModal={isModalOpen}
           title="Заголовок модального окна"

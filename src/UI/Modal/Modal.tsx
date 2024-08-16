@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Btn } from '../Btn/Btn';
 
 import './modal.css';
@@ -35,7 +34,6 @@ export const Modal = ({
       document.querySelector('body').style.overflowY = 'hidden';
     } else document.querySelector('body').style.overflowY = 'auto';
   }, [showModal]);
-
 
   if (!showModal) return null;
 
