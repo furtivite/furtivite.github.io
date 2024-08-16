@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ELangVariables } from 'src/app/Context';
+import { ELangVariables } from '../../app/Context';
 import clsx from 'clsx';
 
 import '../../app/App.css';
