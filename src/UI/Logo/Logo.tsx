@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 
 import '../../app/App.css';
 
-
 interface LogoProps {
   /** Флаг тёмной темы */
   onDark: boolean;
@@ -13,7 +12,6 @@ interface LogoProps {
 /**
  * Компонент "Логотип"
  */
-
 
 export const Logo = ({ onDark = false }: LogoProps): React.ReactElement => {
   const { t } = useTranslation();
