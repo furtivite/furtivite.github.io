@@ -13,26 +13,27 @@ export const resources = {
       },
       buttons: {
         openModal: 'Show a modal',
+        showMore: 'Show more',
       },
-      cards: {
-        categories: {
-          transport: {
-            first: {
-              title: 'Tyre service',
-              desc: 'Wheel assembly',
-            },
-          },
-          food: {
-            first: {
-              title: 'Ham',
-              desc: 'Dixie',
-            },
-            second: {
-              title: 'Something expensive',
-            },
-          },
+
+      cards: [
+        {
+          title: 'Tyre service',
+          desc: 'Wheel assembly',
+          category: 'Транспорт',
         },
-      },
+        {
+          title: 'Ham',
+          desc: 'Dixie',
+          category: 'Продукты',
+        },
+        {
+          title: 'Something expensive',
+          desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla doloribus, beatae illum eveniet aliquam, ipsum officia corporis culpa minima similique qui debitis illo minus enim magni fugiat laudantium officiis tempore aperiam quaerat
+          dolorum!`,
+          category: 'Продукты',
+        },
+      ],
     },
   },
   ru: {
@@ -49,25 +50,7 @@ export const resources = {
       },
       buttons: {
         openModal: 'Открыть модалку',
-      },
-      cards: {
-        categories: {
-          transport: {
-            first: {
-              title: 'Шиномонтаж',
-              desc: 'Колесо монтаж',
-            },
-          },
-          food: {
-            first: {
-              title: 'Ветчина',
-              desc: 'Дикси',
-            },
-            second: {
-              title: 'Что-то дорогое',
-            },
-          },
-        },
+        showMore: 'Показать ещё',
       },
     },
   },
