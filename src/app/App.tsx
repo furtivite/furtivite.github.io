@@ -3,9 +3,12 @@ import './i18n/config';
 import { useTranslation } from 'react-i18next';
 import './App.css';
 import { Context, defaultContext, EThemeVariables, IContext } from './Context';
-import { Layout, Modal, ModalForm, ShortCard } from '../UI';
+import { Btn, Layout, Modal, ModalForm, ShortCard } from '../UI';
 // Интерфейсы экспортируются отдельно
 import { IShortCard } from '../UI/ShortCard/ShortCard';
+import { createPortal } from 'react-dom';
+import { defaultCards } from './data';
+import { randomNumberGenerator, newCardGenerator } from '../features';
 
 export const App = (): React.ReactElement => {
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
@@ -26,27 +29,12 @@ export const App = (): React.ReactElement => {
 
   const { t } = useTranslation();
 
-  const cards: IShortCard[] = [
-    {
-      categoryName: 'Транспорт',
-      title: t('cards.categories.transport.first.title'),
-      price: 1500,
-      description: t('cards.categories.transport.first.desc'),
-    },
-    {
-      categoryName: 'Продукты',
-      title: t('cards.categories.food.first.title'),
-      price: 500,
-      description: t('cards.categories.food.first.desc'),
-    },
-    {
-      categoryName: 'Продукты',
-      title: t('cards.categories.food.second.title'),
-      price: 150000,
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla doloribus, beatae illum eveniet aliquam, ipsum officia corporis culpa minima similique qui debitis illo minus enim magni fugiat laudantium officiis tempore aperiam quaerat dolorum!',
-    },
-  ];
+  const [cards, setCards] = React.useState<IShortCard[]>(defaultCards);
+
+  const handleShowMore = (): void => {
+    const random = randomNumberGenerator(999, 1);
+    setCards([...cards, newCardGenerator(random)]);
+  };
 
   return (
     <Context.Provider value={{ theme, lang, themeSwitchHandler }}>
@@ -54,20 +42,23 @@ export const App = (): React.ReactElement => {
         <p>{t('appDesc')}</p>
         <ModalForm inputValue={inputValue} setInputValue={setInputValue} handleModalFormClick={handleModalFormClick} />
 
-        <Modal
-          showModal={isModalOpen}
-          title="Заголовок модального окна"
-          closeHandler={() => {
-            setIsModalOpen(false);
-            setInputValue('');
-          }}
-          titleButton="Кнопка"
-          onClickButton={() => console.log('КЛИК')}
-        >
-          <p>{inputValue}</p>
-        </Modal>
+        {createPortal(
+          <Modal
+            showModal={isModalOpen}
+            title="Заголовок модального окна"
+            closeHandler={() => {
+              setIsModalOpen(false);
+              setInputValue('');
+            }}
+            titleButton="Кнопка"
+            onClickButton={() => console.log('КЛИК')}
+          >
+            <p>{inputValue}</p>
+          </Modal>,
+          document.body
+        )}
 
-        <div className="flex-column gap-16">
+        <div className="flex-column gap-16 margin-bottom-24">
           {cards.map((item: IShortCard) => {
             const { title, categoryName, price, description } = item;
             return (
@@ -81,6 +72,7 @@ export const App = (): React.ReactElement => {
             );
           })}
         </div>
+        <Btn text={t('buttons.showMore')} onClick={handleShowMore} />
       </Layout>
     </Context.Provider>
   );

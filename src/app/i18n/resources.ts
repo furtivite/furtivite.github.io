@@ -13,25 +13,7 @@ export const resources = {
       },
       buttons: {
         openModal: 'Show a modal',
-      },
-      cards: {
-        categories: {
-          transport: {
-            first: {
-              title: 'Tyre service',
-              desc: 'Wheel assembly',
-            },
-          },
-          food: {
-            first: {
-              title: 'Ham',
-              desc: 'Dixie',
-            },
-            second: {
-              title: 'Something expensive',
-            },
-          },
-        },
+        showMore: 'Show more',
       },
     },
   },
@@ -49,25 +31,7 @@ export const resources = {
       },
       buttons: {
         openModal: 'Открыть модалку',
-      },
-      cards: {
-        categories: {
-          transport: {
-            first: {
-              title: 'Шиномонтаж',
-              desc: 'Колесо монтаж',
-            },
-          },
-          food: {
-            first: {
-              title: 'Ветчина',
-              desc: 'Дикси',
-            },
-            second: {
-              title: 'Something expensive',
-            },
-          },
-        },
+        showMore: 'Показать ещё',
       },
     },
   },
