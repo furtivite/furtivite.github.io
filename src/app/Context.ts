@@ -6,8 +6,8 @@ export enum EThemeVariables {
 }
 
 export enum ELangVariables {
-  RU = 'ru-ru',
-  US = 'en-us',
+  RU = 'ru',
+  EN = 'en',
 }
 
 interface ContextProps {
