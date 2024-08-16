@@ -64,7 +64,7 @@ export const resources = {
               desc: 'Дикси',
             },
             second: {
-              title: 'Something expensive',
+              title: 'Что-то дорогое',
             },
           },
         },
