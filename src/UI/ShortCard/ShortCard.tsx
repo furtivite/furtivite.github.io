@@ -1,8 +1,9 @@
 import React from 'react';
 
 import './short-card.css';
+import '../../app/App.css';
 
-interface ShortCardProps {
+export interface IShortCard {
   categoryName: 'Транспорт' | 'Продукты';
   title: string;
   price: number;
@@ -12,7 +13,7 @@ interface ShortCardProps {
 /**
  * Компонент "Карточка с кратким отображением операции"
  */
-export const ShortCard = ({ categoryName, title, price, description }: ShortCardProps): React.ReactElement => (
+export const ShortCard = ({ categoryName, title, price, description }: IShortCard): React.ReactElement => (
   <article className="card">
     <header className="flex">
       <div className="flex">
@@ -36,6 +37,8 @@ export const ShortCard = ({ categoryName, title, price, description }: ShortCard
         <span>₽</span>
       </p>
     </header>
-    <p>{description.slice(0, 100).slice(0, -3) + '...'}</p>
+    <p className="margin-top-8">
+      {description.length > 100 ? description.slice(0, 100).slice(0, -3) + '...' : description}
+    </p>
   </article>
 );

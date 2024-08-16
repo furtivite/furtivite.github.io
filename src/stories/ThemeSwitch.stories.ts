@@ -15,7 +15,6 @@ export default meta;
 export const ThemeSwitchBtn: Story = {
   args: {
     isDark: false,
-    onClick: () => console.log('КЛИК'),
   },
   parameters: {
     backgrounds: {
