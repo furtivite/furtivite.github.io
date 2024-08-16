@@ -15,25 +15,6 @@ export const resources = {
         openModal: 'Show a modal',
         showMore: 'Show more',
       },
-
-      cards: [
-        {
-          title: 'Tyre service',
-          desc: 'Wheel assembly',
-          category: 'Транспорт',
-        },
-        {
-          title: 'Ham',
-          desc: 'Dixie',
-          category: 'Продукты',
-        },
-        {
-          title: 'Something expensive',
-          desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla doloribus, beatae illum eveniet aliquam, ipsum officia corporis culpa minima similique qui debitis illo minus enim magni fugiat laudantium officiis tempore aperiam quaerat
-          dolorum!`,
-          category: 'Продукты',
-        },
-      ],
     },
   },
   ru: {
