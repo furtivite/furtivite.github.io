@@ -1,5 +1,8 @@
+import clsx from 'clsx';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+
+import '../../app/App.css';
 
 interface LogoProps {
   /** Флаг тёмной темы */
@@ -14,10 +17,10 @@ export const Logo = ({ onDark = false }: LogoProps): React.ReactElement => {
   const { t } = useTranslation();
 
   return (
-    <a href="#">
+    <a href="#" className="flex-row align-items-center">
       <img
-        width="50"
-        height="50"
+        width="40"
+        height="40"
         src={
           onDark
             ? 'https://img.icons8.com/ios-filled/100/FCC419/logo.png'
@@ -25,7 +28,7 @@ export const Logo = ({ onDark = false }: LogoProps): React.ReactElement => {
         }
         alt="Груша"
       />
-      <span>{t('header.appTitle')}</span>
+      <div className={clsx('margin-left-8', onDark ? 'txt-white' : 'txt-black')}>{t('header.appTitle')}</div>
     </a>
   );
 };

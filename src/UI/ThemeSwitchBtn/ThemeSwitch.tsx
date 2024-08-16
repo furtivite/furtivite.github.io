@@ -18,8 +18,8 @@ export const ThemeSwitchBtn = ({ isDark }: ThemeSwitchBtnProps): React.ReactElem
   return (
     <button className="light-mode-btn" onClick={themeSwitchHandler}>
       <img
-        width="20"
-        height="20"
+        width="15"
+        height="15"
         src={
           isDark
             ? `https://img.icons8.com/ios-filled/100/FFFFFF/crescent-moon.png`
