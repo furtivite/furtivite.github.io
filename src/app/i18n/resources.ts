@@ -40,7 +40,7 @@ export const resources = {
       appDesc:
         'Приложение учёта доходов и расходов. Реализовано командой @furtivite и @parabutteo. Стек: React, TypeScript',
       header: {
-        appTitle: 'ГрушАп',
+        appTitle: 'ГрушАпп',
       },
       inputs: {
         placeholders: {

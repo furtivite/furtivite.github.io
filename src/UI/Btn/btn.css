@@ -5,6 +5,8 @@
   padding: 4px 8px;
   cursor: pointer;
   font-size: 12px;
+  border-radius: 8px;
+  height: 24px;
 }
 
 .btn:disabled {

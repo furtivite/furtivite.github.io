@@ -6,7 +6,7 @@ import '../../app/App.css';
 
 import { Logo } from '../Logo/Logo';
 import { ThemeSwitchBtn } from '../ThemeSwitchBtn/ThemeSwitch';
-import { LangSwitchBtn } from '../LangSwitchBtn/LangSwitch';
+import { LangSwitchBtn } from '../LangSwitchBtn/LangSwitchBtn';
 
 interface HeaderProps {
   isDark: boolean;
