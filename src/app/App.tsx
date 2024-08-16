@@ -5,7 +5,6 @@ import { Context, defaultContext, EThemeVariables, IContext } from './Context';
 import { Layout, Modal, ModalForm, ShortCard } from '../UI';
 // Интерфейсы экспортируются отдельно
 import { IShortCard } from '../UI/ShortCard/ShortCard';
-import { useTranslation } from 'react-i18next';
 
 export const App = (): React.ReactElement => {
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
@@ -46,13 +45,9 @@ export const App = (): React.ReactElement => {
     },
   ];
 
-  const { t } = useTranslation('ns2');
-
   return (
     <Context.Provider value={{ theme, lang, themeSwitchHandler }}>
       <Layout>
-        <p>{t('description.part1')}</p>
-        <p>{t('description.part2')}</p>
         <ModalForm inputValue={inputValue} setInputValue={setInputValue} handleModalFormClick={handleModalFormClick} />
 
         <Modal
