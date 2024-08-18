@@ -20,11 +20,9 @@ export const LangSwitchBtn = (): React.ReactElement => {
   };
 
   return (
-    <>
-      <button className="lang-switch-btn margin-left-16" onClick={changeLangHandler}>
-        <span className={clsx(lang === ELangVariables.RU && 'active')}>RU</span>
-        <span className={clsx(lang === ELangVariables.EN && 'active')}>EN</span>
-      </button>
-    </>
+    <button className="lang-switch-btn margin-left-16" onClick={changeLangHandler}>
+      <span className={clsx(lang === ELangVariables.RU && 'active')}>RU</span>
+      <span className={clsx(lang === ELangVariables.EN && 'active')}>EN</span>
+    </button>
   );
 };

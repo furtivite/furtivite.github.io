@@ -7,7 +7,7 @@ import '../../app/App.css';
 interface ModalFormProps {
   inputValue: string | number | readonly string[];
   // TODO: Затипизировать
-  setInputValue: any;
+  setInputValue: React.Dispatch<React.SetStateAction<string | number | readonly string[]>>;
   handleModalFormClick: () => void;
 }
 
