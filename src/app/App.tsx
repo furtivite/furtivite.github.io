@@ -9,6 +9,7 @@ import { IShortCard } from '../UI/ShortCard/ShortCard';
 import { createPortal } from 'react-dom';
 import { defaultCards } from './data';
 import { randomNumberGenerator, newCardGenerator } from '../features';
+import { Tooltip } from '../UI/Tooltip/Tooltip';
 
 export const App = (): React.ReactElement => {
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
@@ -39,6 +40,11 @@ export const App = (): React.ReactElement => {
   return (
     <Context.Provider value={{ theme, lang, themeSwitchHandler }}>
       <Layout>
+        <Tooltip title="текст по наведению">
+          <b className="b" style={{ backgroundColor: '#ccc' }}>
+            текст для наведения
+          </b>
+        </Tooltip>
         <p>{t('appDesc')}</p>
         <ModalForm inputValue={inputValue} setInputValue={setInputValue} handleModalFormClick={handleModalFormClick} />
 
