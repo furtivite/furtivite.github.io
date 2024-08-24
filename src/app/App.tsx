@@ -40,12 +40,9 @@ export const App = (): React.ReactElement => {
   return (
     <Context.Provider value={{ theme, lang, themeSwitchHandler }}>
       <Layout>
-        <Tooltip title="текст по наведению">
-          <b className="b" style={{ backgroundColor: '#ccc' }}>
-            текст для наведения
-          </b>
+        <Tooltip title="Текст по наведению, пока только на русском">
+          <p className="margin-bottom-16 padding-bottom-none">{t('appDesc')}</p>
         </Tooltip>
-        <p>{t('appDesc')}</p>
         <ModalForm inputValue={inputValue} setInputValue={setInputValue} handleModalFormClick={handleModalFormClick} />
 
         {createPortal(
