@@ -11,7 +11,7 @@ export interface ITooltip {
   title: string;
   /** Позиция всплывания тултипа */
   // TODO передалать на ENUM
-  position?: 'top' | 'left' | 'right' | 'bottom';
+  direction?: 'top' | 'left' | 'right' | 'bottom';
 }
 
 /**
@@ -22,20 +22,27 @@ export interface ITooltip {
  * 2. Подсказка (hint) - то, что всплывает
  */
 
-export const Tooltip = ({ children, title, position = 'top' }: ITooltip): React.ReactElement => {
+export const Tooltip = ({ children, title, direction = 'top' }: ITooltip): React.ReactElement => {
   /** Признак видимости подсказки */
-  const [isHintVisible, setIsHintVisible] = React.useState<boolean>(false);
+  const [isHintMount, setIsHintMount] = React.useState<boolean>(false);
+  const [isShowHint, setIsShowHint] = React.useState<boolean>(false);
 
   /** Хендлер "наведения на цель" */
   const onMouseOver = (): void => {
-    setIsHintVisible(true);
+    setIsHintMount(true);
   };
+
+  /** Эфект для плавного появления тултипа */
+  React.useLayoutEffect(() => {
+    setTimeout(() => {
+      isHintMount && setIsShowHint(true);
+    }, 200);
+    !isHintMount && setIsShowHint(false);
+  }, [isHintMount]);
 
   /** Хендлер при "уходе с цели" */
   const onMouseOut = (): void => {
-    setTimeout(() => {
-      setIsHintVisible(false);
-    }, 300);
+    setIsHintMount(false);
   };
 
   /** Реф элемента "Цель" */
@@ -62,7 +69,7 @@ export const Tooltip = ({ children, title, position = 'top' }: ITooltip): React.
   };
 
   /** Изначальная/получившаяся позиция подсказки */
-  const [tooltipPosition, setTooltipPosition] = React.useState<TPosition>({
+  const [position, setPosition] = React.useState<TPosition>({
     top: 'auto',
     left: 'auto',
   });
@@ -72,10 +79,10 @@ export const Tooltip = ({ children, title, position = 'top' }: ITooltip): React.
     /** Определяем размеры и позицию элемента "Цель" */
     const targetRect = targetRef.current.getBoundingClientRect();
 
-    switch (position) {
+    switch (direction) {
       case 'left':
         // TODO перестало работать, надо пересчитать
-        setTooltipPosition({
+        setPosition({
           top: `${targetRect.y - 12}px`,
           // TODO Bместо 200 искать ширину тултипа
           // Если нет расстояния, то меням позиционирование
@@ -84,39 +91,39 @@ export const Tooltip = ({ children, title, position = 'top' }: ITooltip): React.
         break;
       case 'right':
         // TODO перестало работать, надо пересчитать
-        setTooltipPosition({
+        setPosition({
           top: `${targetRect.y - 12}px`,
           left: `${targetRect.left + targetRect.width + 12}px`,
         });
         break;
       case 'bottom':
-        setTooltipPosition({
+        setPosition({
           top: `${targetRect.y + targetRect.height + 12}px`,
           left: `${targetRect.left}px`,
         });
         break;
       default:
-        setTooltipPosition({
+        setPosition({
           // TODO Bместо 65 искать height тултипа
           top: `${targetRect.y - 50}px`,
           left: `${targetRect.left}px`,
         });
         break;
     }
-  }, [position]);
+  }, [direction]);
 
   return (
     <>
-      {isHintVisible &&
+      {isHintMount &&
         createPortal(
           <div
-            className={clsx(position, 'tooltip')}
+            className={clsx(direction, 'tooltip', isShowHint && 'tooltip-visible')}
             /** Два атрибута ниже для поддержки доступности */
             id={title}
             role="tooltip"
             style={{
-              top: tooltipPosition.top,
-              left: tooltipPosition.left,
+              top: position.top,
+              left: position.left,
             }}
           >
             {title}

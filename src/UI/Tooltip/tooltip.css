@@ -6,8 +6,12 @@
   z-index: 100;
   padding: 12px;
   border-radius: 8px;
+  opacity: 0;
+}
+
+.tooltip-visible {
   opacity: 1;
-  transition: opacity 1s ease 0s;
+  transition: .4s;
 }
 
 .layout_dark .tooltip {
