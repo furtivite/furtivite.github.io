@@ -5,7 +5,7 @@ import { Btn as BtnComponent } from '../UI/Btn/Btn';
 type Story = StoryObj<typeof meta>;
 
 const meta: Meta<typeof BtnComponent> = {
-  title: 'Example/Btn',
+  title: 'Buttons/Btn',
   component: BtnComponent,
   tags: ['autodocs'],
 };
