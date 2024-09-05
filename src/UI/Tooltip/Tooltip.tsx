@@ -11,7 +11,7 @@ enum EHintDirection {
   RIGHT = 'right',
 }
 
-export interface ITooltip {
+interface ITooltip {
   /** Разметка цели */
   children: JSX.Element;
   /** Текст тултипа */
