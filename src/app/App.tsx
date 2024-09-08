@@ -3,7 +3,7 @@ import './i18n/config';
 import { useTranslation } from 'react-i18next';
 import './App.css';
 import { Context, defaultContext, EThemeVariables, IContext } from './Context';
-import { Btn, Layout, Modal, ModalForm, ShortCard } from '../UI';
+import { Btn, Layout, Modal, ModalForm, ShortCard, Tooltip } from '../UI';
 // Интерфейсы экспортируются отдельно
 import { IShortCard } from '../UI/ShortCard/ShortCard';
 import { createPortal } from 'react-dom';
@@ -39,7 +39,9 @@ export const App = (): React.ReactElement => {
   return (
     <Context.Provider value={{ theme, lang, themeSwitchHandler }}>
       <Layout>
-        <p>{t('appDesc')}</p>
+        <Tooltip title="Текст по наведению, пока только на русском">
+          <p className="margin-bottom-16 padding-bottom-none">{t('appDesc')}</p>
+        </Tooltip>
         <ModalForm inputValue={inputValue} setInputValue={setInputValue} handleModalFormClick={handleModalFormClick} />
 
         {createPortal(

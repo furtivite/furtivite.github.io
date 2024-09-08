@@ -7,3 +7,4 @@ export { ModalForm } from './ModaForm/ModalForm';
 export { Modal } from './Modal/Modal';
 export { ShortCard } from './ShortCard/ShortCard';
 export { ThemeSwitchBtn } from './ThemeSwitchBtn/ThemeSwitch';
+export { Tooltip } from './Tooltip/Tooltip';
