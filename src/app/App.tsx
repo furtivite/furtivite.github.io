@@ -3,13 +3,12 @@ import './i18n/config';
 import { useTranslation } from 'react-i18next';
 import './App.css';
 import { Context, defaultContext, EThemeVariables, IContext } from './Context';
-import { Btn, Layout, Modal, ModalForm, ShortCard } from '../UI';
+import { Btn, Layout, Modal, ModalForm, ShortCard, Tooltip } from '../UI';
 // Интерфейсы экспортируются отдельно
 import { IShortCard } from '../UI/ShortCard/ShortCard';
 import { createPortal } from 'react-dom';
 import { defaultCards } from './data';
 import { randomNumberGenerator, newCardGenerator } from '../features';
-import { Tooltip } from '../UI/Tooltip/Tooltip';
 
 export const App = (): React.ReactElement => {
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
