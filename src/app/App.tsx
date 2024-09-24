@@ -44,11 +44,13 @@ export const App = (): React.ReactElement => {
         <Tooltip title="Текст по наведению, пока только на русском">
           <p className="margin-bottom-16 padding-bottom-none">{t('appDesc')}</p>
         </Tooltip>
+
         <Collapse opened={isCollapseOpened} onClick={() => setIsCollapseOpened(!isCollapseOpened)}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati error exercitationem nesciunt harum,
           corporis enim fugiat nobis voluptates beatae, reiciendis placeat quod qui sapiente maxime molestias explicabo
           nostrum. Inventore, vel!
         </Collapse>
+        
         <ModalForm inputValue={inputValue} setInputValue={setInputValue} handleModalFormClick={handleModalFormClick} />
 
         {createPortal(
