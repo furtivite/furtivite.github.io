@@ -1,11 +1,13 @@
 import React from 'react';
-import clsx from 'clsx';
 
 import './collapse.css';
 
 interface Props {
+  /** строка с текстом внутри компонента */
   children: string;
+  /** состояние компонента opened: true - открыто */
   opened: boolean;
+  /** функция для изменения состояния */
   onClick: () => void;
 }
 
@@ -37,11 +39,7 @@ export const Collapse = ({ children, opened, onClick }: Props): React.ReactEleme
   };
 
   return (
-    <div
-      style={collapseBlockStyle}
-      className={clsx('margin-bottom-24', 'collapse', opened && 'collapse-opened')}
-      onClick={onClick}
-    >
+    <div style={collapseBlockStyle} className="margin-bottom-24 collapse" onClick={onClick}>
       <div style={collapseInliseStyle} onTransitionEnd={handleTransitionEnd}>
         {isCollapseContentMount && <div className="collapse_wrapper">{isAnimationEnded && children}</div>}
       </div>

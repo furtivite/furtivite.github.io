@@ -9,9 +9,3 @@
 
   transition: ease-out;
 }
-
-.collapse-opened {
-  width: 90%;
-  padding: 2rem;
-  transition: 'width 1s';
-}

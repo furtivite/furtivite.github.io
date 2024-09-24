@@ -1,19 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Collapse } from '../UI/Collapse/Collapse';
+import { Collapse as CollapseComponent } from '../UI/Collapse/Collapse';
 
-const meta = {
+const meta: Meta<typeof CollapseComponent> = {
   title: 'Example/Collapse',
-  component: Collapse,
+  component: CollapseComponent,
   tags: ['autodocs'],
-} satisfies Meta<typeof Collapse>;
+};
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Collapse: Story = {
   args: {
+    /** Укажите текст в открытом компоненте */
     children: 'string',
     opened: false,
     onClick: () => null,
