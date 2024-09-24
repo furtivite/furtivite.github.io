@@ -3,7 +3,7 @@ import './i18n/config';
 import { useTranslation } from 'react-i18next';
 import './App.css';
 import { Context, defaultContext, EThemeVariables, IContext } from './Context';
-import { Btn, Layout, Modal, ModalForm, ShortCard, Tooltip } from '../UI';
+import { Btn, Collapse, Layout, Modal, ModalForm, ShortCard, Tooltip } from '../UI';
 // Интерфейсы экспортируются отдельно
 import { IShortCard } from '../UI/ShortCard/ShortCard';
 import { createPortal } from 'react-dom';
@@ -19,6 +19,8 @@ export const App = (): React.ReactElement => {
   };
 
   const [contextValue, setContextValue] = React.useState<IContext>(defaultContext);
+  const [isCollapseOpened, setIsCollapseOpened] = React.useState<boolean>(false);
+
   const { theme, lang } = contextValue;
 
   const themeSwitchHandler = (): void => {
@@ -42,6 +44,13 @@ export const App = (): React.ReactElement => {
         <Tooltip title="Текст по наведению, пока только на русском">
           <p className="margin-bottom-16 padding-bottom-none">{t('appDesc')}</p>
         </Tooltip>
+
+        <Collapse opened={isCollapseOpened} onClick={() => setIsCollapseOpened(!isCollapseOpened)}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati error exercitationem nesciunt harum,
+          corporis enim fugiat nobis voluptates beatae, reiciendis placeat quod qui sapiente maxime molestias explicabo
+          nostrum. Inventore, vel!
+        </Collapse>
+        
         <ModalForm inputValue={inputValue} setInputValue={setInputValue} handleModalFormClick={handleModalFormClick} />
 
         {createPortal(
