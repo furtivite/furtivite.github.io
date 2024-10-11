@@ -17,7 +17,7 @@ export const Logo = ({ onDark = false }: LogoProps): React.ReactElement => {
   const { t } = useTranslation();
 
   return (
-    <a href="#" className="flex-row align-items-center">
+    <a href="/main" className="flex-row align-items-center">
       <img
         width="40"
         height="40"

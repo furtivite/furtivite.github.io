@@ -6,6 +6,7 @@ import { Context, defaultContext, EThemeVariables, IContext } from './Context';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { MainPage } from './pages/MainPage';
 import { Profile } from './pages/Profile';
+import { Sign } from './pages/Sign';
 
 export const App = (): React.ReactElement => {
   const [contextValue, setContextValue] = React.useState<IContext>(defaultContext);
@@ -22,7 +23,8 @@ export const App = (): React.ReactElement => {
     <Context.Provider value={{ theme, lang, themeSwitchHandler }}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/" element={<Sign />} />
+          <Route path="/main" element={<MainPage />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>

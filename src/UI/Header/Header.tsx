@@ -7,6 +7,7 @@ import '../../app/App.css';
 import { Logo } from '../Logo/Logo';
 import { ThemeSwitchBtn } from '../ThemeSwitchBtn/ThemeSwitch';
 import { LangSwitchBtn } from '../LangSwitchBtn/LangSwitchBtn';
+import { urlIncludes } from 'src/features';
 
 interface HeaderProps {
   isDark: boolean;
@@ -21,11 +22,18 @@ export const Header = ({ isDark }: HeaderProps): React.ReactElement => {
     <header className={clsx('header', 'sticky', isDark && 'header_dark')}>
       <Logo onDark={isDark} />
       <div className="flex-row align-items-center">
-        <a className="link-button margin-right-16" href="/profile">
-          Профиль
-        </a>
+        {urlIncludes('main') && (
+          <a className="link-button margin-right-16" href="/profile">
+            Профиль
+          </a>
+        )}
         <ThemeSwitchBtn isDark={isDark} />
         <LangSwitchBtn />
+        {(urlIncludes('main') || urlIncludes('profile')) && (
+          <a className="link-button danger margin-left-16" href="/">
+            Выход
+          </a>
+        )}
       </div>
     </header>
   );
