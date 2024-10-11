@@ -14,3 +14,18 @@
   opacity: .5;
   cursor: inherit;
 }
+
+.link-button {
+  border: 1px solid #87b0ed;
+  color: #1358bf;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  transition: .2s;
+}
+
+.link-button:hover {
+  background-color: #1358bf;
+  border-color: #1358bf;
+  color: white;
+}

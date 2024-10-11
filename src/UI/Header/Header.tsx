@@ -21,6 +21,9 @@ export const Header = ({ isDark }: HeaderProps): React.ReactElement => {
     <header className={clsx('header', 'sticky', isDark && 'header_dark')}>
       <Logo onDark={isDark} />
       <div className="flex-row align-items-center">
+        <a className="link-button margin-right-16" href="/profile">
+          Профиль
+        </a>
         <ThemeSwitchBtn isDark={isDark} />
         <LangSwitchBtn />
       </div>
