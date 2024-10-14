@@ -25,7 +25,7 @@ const schema = yup.object().shape({
 });
 
 /**
- * Компонент "Карточка с кратким отображением операции"
+ * Компонент "Карточка добавления/редактирования операции"
  */
 export const OperationModal = ({ title, price, isOpen, setIsOpen, isAddMode = false }: Props): React.ReactElement => {
   const {

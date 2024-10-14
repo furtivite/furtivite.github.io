@@ -122,7 +122,7 @@ const AuthFormComponent = (): React.ReactElement => {
 const meta: Meta = {
   title: 'Forms/Auth',
   component: AuthFormComponent,
-  argTypes: {},
+  args: {},
   tags: ['autodocs'],
 };
 
