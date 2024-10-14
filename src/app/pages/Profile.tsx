@@ -24,7 +24,6 @@ const schema = yup
   .required();
 
 export const Profile = (): React.ReactElement => {
-  console.log(typeof schema);
   const {
     register,
     handleSubmit,

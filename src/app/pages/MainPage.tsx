@@ -5,6 +5,7 @@ import { IShortCard, ShortCard } from 'src/UI/ShortCard/ShortCard';
 import { defaultCards } from '../data';
 import { newCardGenerator, randomNumberGenerator } from 'src/features';
 import { createPortal } from 'react-dom';
+import { OperationModal } from 'src/UI/Modal/OperationModal';
 
 export const MainPage = (): React.ReactElement => {
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
@@ -24,6 +25,8 @@ export const MainPage = (): React.ReactElement => {
   const handleModalFormClick = (): void => {
     setIsModalOpen(true);
   };
+
+  const [showEditModal, setShowEditModal] = React.useState<boolean>(false);
 
   return (
     <Layout>
@@ -63,7 +66,11 @@ export const MainPage = (): React.ReactElement => {
           );
         })}
       </div>
-      <Btn text={t('buttons.showMore')} onClick={handleShowMore} />
+      <div className="flex-row gap-16">
+        <Btn text={t('buttons.showMore')} onClick={handleShowMore} />
+        <Btn text={t('buttons.addNewOperation')} onClick={() => setShowEditModal(true)} />
+      </div>
+      <OperationModal isOpen={showEditModal} setIsOpen={setShowEditModal} isAddMode />
     </Layout>
   );
 };

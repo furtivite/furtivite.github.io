@@ -13,9 +13,9 @@ interface ModalComponentProps {
   /** Тело */
   children: React.ReactNode;
   /** Целевая кнопка */
-  titleButton: string;
+  titleButton?: string;
   /** Обработчик целевой кнопки */
-  onClickButton: () => void;
+  onClickButton?: () => void;
 }
 
 /**
@@ -43,9 +43,11 @@ export const Modal = ({
         <button className="modal-close" onClick={closeHandler} />
         <h1 className="modal-header">{title}</h1>
         <div className="modal-body">{children}</div>
-        <div className="modal-footer">
-          <Btn text={titleButton} onClick={onClickButton} />
-        </div>
+        {!!titleButton && (
+          <div className="modal-footer">
+            <Btn text={titleButton} onClick={onClickButton} />
+          </div>
+        )}
       </div>
     </div>
   );
