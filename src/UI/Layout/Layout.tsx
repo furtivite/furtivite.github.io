@@ -6,7 +6,7 @@ import { Header } from '../Header/Header';
 import { Context } from '../../app/Context';
 
 interface LayoutProps {
-  children: React.ReactFragment;
+  children: React.ReactFragment | React.ReactElement;
 }
 
 /**
