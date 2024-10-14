@@ -8,7 +8,24 @@
   color: white;
 }
 
+.txt-success {
+  color: green;
+}
+
+.txt-danger {
+  color: red;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: gray;
+}
+
 /* Helpers */
+
+.grid {
+  display: grid;
+}
 
 .gap-16 {
   gap: 16px;
@@ -16,6 +33,10 @@
 
 .gap-8 {
   gap: 8px;
+}
+
+.margin-right-16 {
+  margin-right: 16px;
 }
 
 .margin-top-8 {
@@ -28,6 +49,14 @@
 
 .margin-bottom-24 {
   margin-bottom: 24px;
+}
+
+.margin-bottom-4 {
+  margin-bottom: 4px;
+}
+
+.margin-bottom-8 {
+  margin-bottom: 8px;
 }
 
 .margin-left-16 {

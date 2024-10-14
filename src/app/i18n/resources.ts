@@ -14,6 +14,7 @@ export const resources = {
       buttons: {
         openModal: 'Show a modal',
         showMore: 'Show more',
+        addNewOperation: 'Add new operation',
       },
     },
   },
@@ -32,6 +33,7 @@ export const resources = {
       buttons: {
         openModal: 'Открыть модалку',
         showMore: 'Показать ещё',
+        addNewOperation: 'Добавить новую операцию',
       },
     },
   },
