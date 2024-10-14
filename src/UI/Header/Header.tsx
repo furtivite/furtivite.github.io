@@ -7,7 +7,7 @@ import '../../app/App.css';
 import { Logo } from '../Logo/Logo';
 import { ThemeSwitchBtn } from '../ThemeSwitchBtn/ThemeSwitch';
 import { LangSwitchBtn } from '../LangSwitchBtn/LangSwitchBtn';
-import { urlIncludes } from 'src/features';
+import { urlIncludes } from '../../features';
 
 interface HeaderProps {
   isDark: boolean;

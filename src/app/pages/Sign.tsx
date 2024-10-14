@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@corex/hook-form-yup-resolver';
 import * as yup from 'yup';
-import { Btn, Layout } from 'src/UI';
+import { Btn, Layout } from '../../UI';
 import { useNavigate } from 'react-router-dom';
 
 // Типы полей формы
