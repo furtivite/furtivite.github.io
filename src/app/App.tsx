@@ -7,9 +7,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { MainPage } from './pages/MainPage';
 import { Profile } from './pages/Profile';
 import { Sign } from './pages/Sign';
+import { Btn, Collapse, Layout, Modal, ModalForm, ShortCard, Tooltip } from '../UI';
+// Интерфейсы экспортируются отдельно
+import { IShortCard } from '../UI/ShortCard/ShortCard';
+import { createPortal } from 'react-dom';
+import { defaultCards } from './data';
+import { randomNumberGenerator, newCardGenerator } from '../features';
 
 export const App = (): React.ReactElement => {
   const [contextValue, setContextValue] = React.useState<IContext>(defaultContext);
+  const [isCollapseOpened, setIsCollapseOpened] = React.useState<boolean>(false);
 
   const { theme, lang } = contextValue;
 
