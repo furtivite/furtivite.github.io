@@ -63,7 +63,12 @@ export const AddToCart = ({ counter, children }: IBtn & ICounter): React.ReactEl
     <Btn>
       <div className="flex items-center gap-[6px]">
         {children}
-        <Icon />
+        <img
+          src="https://raw.githubusercontent.com/furtivite/cdn.furtivite.github.io/refs/heads/main/images/add-to-cart.svg"
+          alt=""
+          width={25}
+          height={24}
+        />
       </div>
     </Btn>
   );
