@@ -54,6 +54,8 @@ export const Logo = ({ type, text }: ILogo): React.ReactElement => (
     {type === ELogoType.DARK && <Dark />}
     {type === ELogoType.LIGHT && <Light />}
     {type === ELogoType.NOBORDER && <Admin />}
-    <span className="logo">{type === ELogoType.NOBORDER ? 'Admin' : text}</span>
+    <span className="font-manrope font-extrabold text-xl tracking-tighter">
+      {type === ELogoType.NOBORDER ? 'Admin' : text}
+    </span>
   </div>
 );
