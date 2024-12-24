@@ -16,7 +16,7 @@ export const Modal = ({ isVisible, children }: IModal): React.ReactElement => {
             />
             <span className="sr-only">Close</span>
           </button>
-          {children}
+          <div className="bg-w-900 aspect-square">{children}</div>
         </div>
       </div>
     );
