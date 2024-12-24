@@ -1,5 +1,5 @@
 export { AddToCart, Btn } from './Btns';
-export { ShortCard } from './Card';
+export { FullCard, ShortCard } from './Card';
 export { Counter } from './Counter/Counter';
 export { Header } from './Header/Header';
 export { Layout } from './Layout/Layout';

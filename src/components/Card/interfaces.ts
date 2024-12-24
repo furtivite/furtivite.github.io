@@ -5,4 +5,5 @@ export interface IGoodsItem {
   details: string | string[];
   price: number;
   imageListing: string;
+  imageFull: string[];
 }
