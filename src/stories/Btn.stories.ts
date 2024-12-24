@@ -9,8 +9,16 @@ const meta: Meta<typeof Btn> = {
 
 export default meta;
 
-export const Default = {
+export const Active = {
   args: {
     children: 'Subscribe',
+    isDisabled: false,
+  },
+};
+
+export const Disabled = {
+  args: {
+    children: 'Subscribe',
+    isDisabled: true,
   },
 };

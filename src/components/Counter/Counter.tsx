@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICounter } from './interface';
+import { ICounter } from './interfaces';
 
 export const Counter = ({ counter }: ICounter): React.ReactElement => (
   <div className="min-w-[164px] max-w-fit min-h-[47px] flex justify-between items-center px-4 border-[1px] border-solid border-b-100 rounded font-inter text-sm text-b-800 leading-7">

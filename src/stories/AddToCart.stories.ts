@@ -12,11 +12,20 @@ export default meta;
 export const Empty = {
   args: {
     children: 'Add to cart',
+    isDisabled: false,
   },
 };
 
 export const HasGoods = {
   args: {
     counter: 1,
+    isDisabled: false,
+  },
+};
+
+export const Disabled = {
+  args: {
+    children: 'Add to cart',
+    isDisabled: true,
   },
 };
