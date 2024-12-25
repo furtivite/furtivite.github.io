@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import { IGoodsItem } from './interfaces';
 import { Btn, Counter, StockStatus } from '../../components';
 
-export const FullCard = ({ title, price, details, imageFull, isInStock }: IGoodsItem): React.ReactElement => (
+export const FullCard: React.FC<IGoodsItem> = ({ title, price, details, imageFull, isInStock }) => (
   <div className="font-inter">
     <div className="grid grid-cols-2">
       {/* TEMP ONLY FIRST IMAGE */}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { IBtnDefault } from './interfaces';
 
-export const DeleteBtn = ({ isDisabled }: IBtnDefault): React.ReactElement => (
+export const DeleteBtn: React.FC<IBtnDefault> = ({ isDisabled }) => (
   <button
     className="flex justify-center items-center p-[10px] bg-b-100 disabled:bg-w-900 disabled:border-[1px] disabled:border-solid disabled:border-b-100 rounded"
     disabled={isDisabled}

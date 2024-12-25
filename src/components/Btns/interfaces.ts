@@ -6,5 +6,5 @@ export interface IBtnDefault {
 
 export interface IBtn extends IBtnDefault {
   // TEMP custom children then extends ILayout
-  children: React.JSX.Element | React.JSX.Element[] | string;
+  children: React.ReactNode | React.ReactNode[] | string;
 }
