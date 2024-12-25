@@ -13,13 +13,18 @@ export default meta;
 const item = goods[0];
 
 export const Default = {
+  argTypes: {
+    color: {
+      options: item.colors,
+      control: 'radio',
+    },
+  },
   args: {
-    id: item.id,
-    isInStock: true,
-    title: item.title,
-    details: item.details,
-    price: item.price,
-    imageListing: item.imageListing,
+    size: item.sizes[0],
+    color: item.colors[0],
     counter: 1,
+    title: item.title,
+    price: item.price,
+    image: item.imageListing,
   },
 };
