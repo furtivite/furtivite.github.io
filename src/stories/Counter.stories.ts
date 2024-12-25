@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react';
 import { Counter } from '../components';
 
 const meta: Meta<typeof Counter> = {
-  title: 'UI/Counter',
+  title: 'UI/Cards/components/Counter',
   component: Counter,
   tags: ['autodocs'],
 };

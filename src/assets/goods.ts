@@ -1,6 +1,7 @@
 import { IGoodsItem } from '../components/interfaces';
 
-const image1 = 'https://github.com/furtivite/cdn.furtivite.github.io/blob/main/images/goods/1/small.jpg?raw=true';
+const image1 = 'https://github.com/furtivite/cdn.furtivite.github.io/blob/main/images/goods/1/small.png?raw=true';
+const image1big = 'https://github.com/furtivite/cdn.furtivite.github.io/blob/main/images/goods/1/big.png?raw=true';
 
 export const goods: IGoodsItem[] = [
   {
@@ -13,6 +14,6 @@ export const goods: IGoodsItem[] = [
     ],
     price: 75,
     imageListing: image1,
-    imageFull: [image1, image1],
+    imageFull: [image1big, image1big],
   },
 ];
