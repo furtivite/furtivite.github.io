@@ -18,6 +18,7 @@ export const isInStock = {
     isInStock: item.isInStock,
     price: item.price,
     colors: item.colors,
+    sizes: item.sizes,
   },
 };
 
@@ -27,5 +28,6 @@ export const isOutOfStock = {
     isInStock: !item.isInStock,
     price: item.price,
     colors: item.colors,
+    sizes: item.sizes,
   },
 };

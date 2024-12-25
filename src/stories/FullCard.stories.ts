@@ -21,6 +21,7 @@ export const InStock = {
     price: item.price,
     imageFull: item.imageFull,
     colors: item.colors,
+    sizes: item.sizes,
   },
 };
 
@@ -33,5 +34,6 @@ export const OutOfStock = {
     price: item.price,
     imageFull: item.imageFull,
     colors: item.colors,
+    sizes: item.sizes,
   },
 };

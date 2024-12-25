@@ -3,11 +3,11 @@ import { nanoid } from 'nanoid';
 import { IGoodsItem } from './interfaces';
 import { CardImage, CardDescription } from '../../components';
 
-export const FullCard: React.FC<IGoodsItem> = ({ title, price, details, imageFull, isInStock, colors }) => (
+export const FullCard: React.FC<IGoodsItem> = ({ title, price, details, imageFull, isInStock, colors, sizes }) => (
   <div className="font-inter">
     <div className="grid grid-cols-2 gap-8">
       <CardImage imageFull={imageFull} />
-      <CardDescription title={title} price={price} isInStock={isInStock} colors={colors} />
+      <CardDescription title={title} price={price} isInStock={isInStock} colors={colors} sizes={sizes} />
     </div>
     <h2 className="mb-6 font-bold text-base text-b-900">Details</h2>
     {typeof details === 'string' ? (
