@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react';
 import { StockStatus } from '../components';
 
 const meta: Meta<typeof StockStatus> = {
-  title: 'UI/StockItemStatus',
+  title: 'UI/Cards/components/StockItemStatus',
   component: StockStatus,
   tags: ['autodocs'],
 };

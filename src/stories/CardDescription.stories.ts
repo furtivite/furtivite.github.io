@@ -1,10 +1,10 @@
 import type { Meta } from '@storybook/react';
-import { FullCard } from '../components/index';
+import { CardDescription } from '../components/index';
 import { goods } from '../assets/goods';
 
-const meta: Meta<typeof FullCard> = {
-  title: 'UI/Cards/FullCard',
-  component: FullCard,
+const meta: Meta<typeof CardDescription> = {
+  title: 'UI/Cards/components/CardDescription',
+  component: CardDescription,
   tags: ['autodocs'],
 };
 
@@ -12,27 +12,21 @@ export default meta;
 
 const item = goods[0];
 
-export const InStock = {
+export const isInStock = {
   args: {
-    id: item.id,
-    isInStock: true,
     title: item.title,
-    details: item.details,
+    isInStock: item.isInStock,
     price: item.price,
-    imageFull: item.imageFull,
     colors: item.colors,
     sizes: item.sizes,
   },
 };
 
-export const OutOfStock = {
+export const isOutOfStock = {
   args: {
-    id: item.id,
-    isInStock: false,
     title: item.title,
-    details: item.details,
+    isInStock: !item.isInStock,
     price: item.price,
-    imageFull: item.imageFull,
     colors: item.colors,
     sizes: item.sizes,
   },

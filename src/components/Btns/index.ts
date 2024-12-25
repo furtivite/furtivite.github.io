@@ -1,3 +1,3 @@
-export { AddToCart } from './AddToCart';
-export { Btn } from './Btn';
-export { DeleteBtn } from './DeleteBtn';
+export { AddToCart } from './AddToCart/AddToCart';
+export { Btn } from './Btn/Btn';
+export { DeleteBtn } from './DeleteBtn/DeleteBtn';
