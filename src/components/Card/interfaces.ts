@@ -6,4 +6,5 @@ export interface IGoodsItem {
   price: number;
   imageListing: string;
   imageFull: string[];
+  colors: string[];
 }

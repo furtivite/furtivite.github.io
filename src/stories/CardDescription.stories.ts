@@ -17,6 +17,7 @@ export const isInStock = {
     title: item.title,
     isInStock: item.isInStock,
     price: item.price,
+    colors: item.colors,
   },
 };
 
@@ -25,5 +26,6 @@ export const isOutOfStock = {
     title: item.title,
     isInStock: !item.isInStock,
     price: item.price,
+    colors: item.colors,
   },
 };

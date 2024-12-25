@@ -15,5 +15,6 @@ export const goods: IGoodsItem[] = [
     price: 75,
     imageListing: image1,
     imageFull: [image1big, image1big],
+    colors: ['bg-blue-400', 'bg-yellow-400', 'bg-green-400'],
   },
 ];
