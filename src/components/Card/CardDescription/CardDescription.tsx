@@ -1,8 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';
-import { EGoodsSizes, IGoodsItem } from './interfaces';
-import { Btn, Counter, StockStatus } from '../../components';
+import { EGoodsSizes, IGoodsItem } from '../../interfaces';
+import { Btn, Counter, StockStatus } from '../../../components';
 
 export const CardDescription: React.FC<Partial<IGoodsItem>> = ({ title, isInStock, price, colors, sizes }) => {
   const [currentColor, setCurrentColor] = React.useState<string>(colors ? colors[0] : '');

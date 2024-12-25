@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from '../../components';
-import { ILayout } from './interfaces';
+import { ILayout } from '../interfaces';
 
 export const Layout: React.FC<ILayout> = ({ children }: ILayout) => (
   <div className="relative">

@@ -1,4 +1,4 @@
-export { CardDescription } from './CardDescription';
-export { CardImage } from './CardImage';
-export { FullCard } from './FullCard';
-export { ShortCard } from './ShortCard';
+export { CardDescription } from './CardDescription/CardDescription';
+export { CardImage } from './CardImage/CardImage';
+export { FullCard } from './FullCard/FullCard';
+export { ShortCard } from './ShortCard/ShortCard';

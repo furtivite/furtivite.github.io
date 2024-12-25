@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';
-import { IGoodsItem } from './interfaces';
+import { IGoodsItem } from '../../interfaces';
 
 export const CardImage: React.FC<Partial<IGoodsItem>> = ({ imageFull }) => {
   const [sliderNumber, setSliderNumber] = React.useState<number>(0);
