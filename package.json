@@ -12,7 +12,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "deploy": "npx gh-pages -d dist",
-    "deploy-storybook": "npm run build-storybook && npx gh-pages -d storybook-static -e storybook"
+    "deploy-storybook": "npm run build-storybook && npx gh-pages -d storybook-static -e storybook",
+    "deploy-all": "npm run build && npm run deploy && npm run deploy-storybook"
   },
   "license": "MIT",
   "devDependencies": {
