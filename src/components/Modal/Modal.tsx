@@ -1,7 +1,7 @@
 import React from 'react';
 import { IModal } from './interfaces';
 
-export const Modal = ({ isVisible, children }: IModal): React.ReactElement => {
+export const Modal: React.FC<IModal> = ({ isVisible, children }) => {
   if (isVisible) {
     return (
       <div className="flex justify-center items-center min-h-dvh relative">

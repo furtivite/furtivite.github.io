@@ -2,7 +2,7 @@ import React from 'react';
 import { ICounter, IGoodsItem } from '../interfaces';
 import { Counter, DeleteBtn } from '../../components';
 
-export const BasketGoodsItem = ({ counter, title, price, imageListing }: ICounter & IGoodsItem): React.ReactElement => (
+export const BasketGoodsItem: React.FC<ICounter & IGoodsItem> = ({ counter, title, price, imageListing }) => (
   <article className="flex justify-between font-inter">
     <div className="flex items-center gap-8">
       <div className="flex justify-center items-center w-20 h-20 border-[1px] border-solid border-b-500 rounded overflow-hidden">

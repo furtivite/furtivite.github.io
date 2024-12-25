@@ -2,10 +2,11 @@ import React from 'react';
 import { IBtn, ICounter } from '../interfaces';
 import { Btn, Counter } from '../../components';
 
-export const AddToCart = ({ isDisabled, counter, children }: IBtn & ICounter): React.ReactElement => {
+export const AddToCart: React.FC<IBtn & ICounter> = ({ isDisabled, counter, children }) => {
   if (counter > 0) {
     return <Counter counter={counter} />;
   }
+
   return (
     <Btn isDisabled={isDisabled}>
       <div className="flex justify-center items-center gap-[6px]">

@@ -3,7 +3,7 @@ import { IGoodsItem } from './interfaces';
 import { StockStatus } from '../StockStatus/StockStatus';
 import { AddToCart } from '../Btns';
 
-export const ShortCard = ({ isInStock, title, price, details, imageListing }: IGoodsItem): React.ReactElement => (
+export const ShortCard: React.FC<IGoodsItem> = ({ isInStock, title, price, details, imageListing }) => (
   <article className="flex flex-col gap-3 max-w-[274px] font-inter px-[6px] py-4">
     <div className="min-h-[367px] rounded-sm overflow-hidden">
       <img src={imageListing} alt="" />
