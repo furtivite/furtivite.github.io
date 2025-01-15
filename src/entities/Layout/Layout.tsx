@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from '..';
+import { Header } from 'src/entities';
 import { ILayout } from './interfaces';
 
 export const Layout: React.FC<ILayout> = ({ children }: ILayout) => (
