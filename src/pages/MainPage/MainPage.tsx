@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from 'src/app/logo.svg';
-import 'src/app/index.css';
-import 'src/app/App.css';
+import Logo from '../../app/logo.svg';
+import '../../app/index.css';
+import '../../app/App.css';
 
 export const MainPage: React.FC = () => (
   <div className="App">

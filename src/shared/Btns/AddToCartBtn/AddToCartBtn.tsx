@@ -1,6 +1,6 @@
 import React from 'react';
-import { IBtn, ICounter } from 'src/shared/interfaces';
-import { Btn, Counter } from 'src/shared';
+import { IBtn, ICounter } from '../../../shared/interfaces';
+import { Btn, Counter } from '../../../shared';
 
 export const AddToCartBtn: React.FC<IBtn & ICounter> = ({ isDisabled, counter, children }) => {
   if (counter > 0) {

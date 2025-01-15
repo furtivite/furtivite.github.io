@@ -1,5 +1,5 @@
 import React from 'react';
-import { ELogoType, ILogo } from '../interfaces';
+import { ELogoType, ILogo } from '../../shared/interfaces';
 
 export const Logo: React.FC<ILogo> = ({ type, text }) => {
   const imageUrl = 'https://raw.githubusercontent.com/furtivite/cdn.furtivite.github.io/refs/heads/main/images/';

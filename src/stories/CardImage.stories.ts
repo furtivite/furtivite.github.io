@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
-import { CardImage } from 'src/entities/index';
-import { goods } from 'src/assets/goods';
+import { CardImage } from '../entities/index';
+import { goods } from '../assets/goods';
 
 const meta: Meta<typeof CardImage> = {
   title: 'UI/Cards/components/CardImage',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IBtnDefault } from '../../interfaces';
+import { IBtnDefault } from '../../../shared/interfaces';
 
 export const DeleteBtn: React.FC<IBtnDefault> = ({ isDisabled }) => (
   <button

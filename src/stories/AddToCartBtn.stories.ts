@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { AddToCartBtn } from 'src/shared/Btns';
+import { AddToCartBtn } from '../shared';
 
 const meta: Meta<typeof AddToCartBtn> = {
   title: 'UI/Btns/AddToCartBtn',

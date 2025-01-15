@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { Btn } from 'src/shared';
+import { Btn } from '../shared';
 
 const meta: Meta<typeof Btn> = {
   title: 'UI/Btns/Btn',

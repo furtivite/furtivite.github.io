@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { DeleteBtn } from 'src/shared';
+import { DeleteBtn } from '../shared';
 
 const meta: Meta<typeof DeleteBtn> = {
   title: 'UI/Btns/DeleteBtn',

@@ -1,7 +1,7 @@
 import React from 'react';
-import 'src/app/tailwind.css';
-import { defaultContext, ELangVariables, EThemeVariables, IStoreContext, StoreContext } from 'src/app/StoreContext';
-import { Layout } from 'src/entities';
+import '../../app/tailwind.css';
+import { defaultContext, ELangVariables, EThemeVariables, IStoreContext, StoreContext } from '../../app/StoreContext';
+import { Layout } from '../../entities';
 
 export const Store: React.FC = () => {
   const [contextValue, setContextValue] = React.useState<IStoreContext>(defaultContext);

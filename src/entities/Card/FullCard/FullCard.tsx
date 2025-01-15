@@ -1,7 +1,7 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import { IGoodsItem } from 'src/entities/interfaces';
-import { CardImage, CardDescription } from 'src/entities';
+import { IGoodsItem } from '../../../entities/interfaces';
+import { CardImage, CardDescription } from '../../../entities';
 
 export const FullCard: React.FC<IGoodsItem> = ({ title, price, details, imageFull, isInStock, colors, sizes }) => (
   <div className="font-inter">

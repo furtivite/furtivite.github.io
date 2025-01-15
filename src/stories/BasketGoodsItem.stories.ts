@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
-import { BasketGoodsItem } from 'src/entities';
-import { goods } from 'src/assets/goods';
+import { BasketGoodsItem } from '../entities';
+import { goods } from '../assets/goods';
 
 const meta: Meta<typeof BasketGoodsItem> = {
   title: 'UI/Basket/BasketGoodsItem',

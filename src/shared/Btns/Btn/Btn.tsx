@@ -1,5 +1,5 @@
 import React from 'react';
-import { IBtn } from '../../interfaces';
+import { IBtn } from '../../../shared/interfaces';
 
 export const Btn: React.FC<IBtn> = ({ children, isDisabled }) => (
   <button

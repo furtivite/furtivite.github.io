@@ -1,5 +1,5 @@
 import React from 'react';
-import { IModal } from './interfaces';
+import { IModal } from '../../entities/interfaces';
 
 export const Modal: React.FC<IModal> = ({ isVisible, children }) => {
   if (isVisible) {
