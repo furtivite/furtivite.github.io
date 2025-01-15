@@ -27,10 +27,10 @@ export const Store: React.FC = () => {
   return (
     <StoreContext.Provider value={{ theme, lang, themeSwitchHandler, langSwitchHandler }}>
       <Layout>
-        <>
+        <div className="container mx-auto px-3">
           <p>{lang}</p>
           <p>{theme}</p>
-        </>
+        </div>
       </Layout>
     </StoreContext.Provider>
   );
