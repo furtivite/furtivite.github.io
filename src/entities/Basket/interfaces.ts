@@ -1,4 +1,4 @@
-import { EGoodsSizes } from '../interfaces';
+import { EGoodsSizes } from 'src/entities/interfaces';
 
 export interface IBasketGoodsItem {
   size: EGoodsSizes;

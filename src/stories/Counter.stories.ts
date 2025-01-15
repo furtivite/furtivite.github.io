@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { Counter } from 'src/entities';
+import { Counter } from 'src/shared';
 
 const meta: Meta<typeof Counter> = {
   title: 'UI/Cards/components/Counter',

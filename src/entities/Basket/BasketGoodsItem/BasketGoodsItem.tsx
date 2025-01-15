@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import { IBasketGoodsItem } from '../../interfaces';
-import { Counter, DeleteBtn } from '../..';
+import { IBasketGoodsItem } from 'src/entities/interfaces';
+import { Counter, DeleteBtn } from 'src/shared';
 
 export const BasketGoodsItem: React.FC<IBasketGoodsItem> = ({ size, color, counter, title, price, image }) => {
   const colorClass = clsx('w-3 aspect-square rounded-full', color);
