@@ -1,9 +1,9 @@
 import type { Meta } from '@storybook/react';
-import { AddToCart } from 'src/shared';
+import { AddToCartBtn } from 'src/shared/Btns';
 
-const meta: Meta<typeof AddToCart> = {
-  title: 'UI/Btns/AddToCart',
-  component: AddToCart,
+const meta: Meta<typeof AddToCartBtn> = {
+  title: 'UI/Btns/AddToCartBtn',
+  component: AddToCartBtn,
   tags: ['autodocs'],
 };
 
