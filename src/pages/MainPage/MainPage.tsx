@@ -1,12 +1,12 @@
 import React from 'react';
-import { logo } from 'src/app/logo.svg';
+import Logo from 'src/app/logo.svg';
 import 'src/app/index.css';
 import 'src/app/App.css';
 
 export const MainPage: React.FC = () => (
   <div className="App">
     <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+      <img src={Logo} className="App-logo" alt="logo" />
       <p>
         Привет, меня зовут Егор. Я&nbsp;&mdash; разработчик интерфейсов.
         <br />
