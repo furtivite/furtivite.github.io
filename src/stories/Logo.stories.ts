@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
-import { Logo } from '../components';
-import { ELogoType } from '../components/interfaces';
+import { Logo } from 'src/shared';
+import { ELogoType } from 'src/shared/interfaces';
 
 const meta: Meta<typeof Logo> = {
   title: 'UI/Logo',

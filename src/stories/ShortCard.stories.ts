@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
-import { ShortCard } from '../components/index';
-import { goods } from '../assets/goods';
+import { ShortCard } from 'src/entities';
+import { goods } from 'src/assets/goods';
 
 const meta: Meta<typeof ShortCard> = {
   title: 'UI/Cards/ShortCard',

@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { Modal } from '../components';
+import { Modal } from 'src/entities';
 
 const meta: Meta<typeof Modal> = {
   title: 'UI/Modal',

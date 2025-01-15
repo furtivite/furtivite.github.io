@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { Layout } from '../components';
+import { Layout } from 'src/entities';
 
 const meta: Meta<typeof Layout> = {
   title: 'UI/Layout',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { IGoodsItem } from '../../interfaces';
-import { AddToCart, StockStatus } from '../../../components';
+import { AddToCart, StockStatus } from '../..';
 
 export const ShortCard: React.FC<IGoodsItem> = ({ isInStock, title, price, details, imageListing }) => (
   <article className="flex flex-col gap-3 max-w-[274px] font-inter px-[6px] py-4">

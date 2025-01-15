@@ -1,5 +1,5 @@
 import React from 'react';
-import { Logo } from '../../components';
+import { Logo } from '..';
 import { ELogoType } from '../interfaces';
 
 export const Header: React.FC = () => (

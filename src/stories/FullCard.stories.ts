@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
-import { FullCard } from '../components/index';
-import { goods } from '../assets/goods';
+import { FullCard } from 'src/entities';
+import { goods } from 'src/assets/goods';
 
 const meta: Meta<typeof FullCard> = {
   title: 'UI/Cards/FullCard',

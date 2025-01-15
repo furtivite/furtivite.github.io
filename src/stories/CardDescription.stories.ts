@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
-import { CardDescription } from '../components/index';
-import { goods } from '../assets/goods';
+import { CardDescription } from 'src/entities/index';
+import { goods } from 'src/assets/goods';
 
 const meta: Meta<typeof CardDescription> = {
   title: 'UI/Cards/components/CardDescription',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { IBtn, ICounter } from '../../interfaces';
-import { Btn, Counter } from '../../../components';
+import { Btn, Counter } from '../../../entities';
 
 export const AddToCart: React.FC<IBtn & ICounter> = ({ isDisabled, counter, children }) => {
   if (counter > 0) {

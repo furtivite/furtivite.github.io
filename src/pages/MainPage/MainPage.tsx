@@ -1,5 +1,6 @@
 import React from 'react';
 import { logo } from 'src/app/logo.svg';
+import 'src/app/index.css';
 import 'src/app/App.css';
 
 export const MainPage: React.FC = () => (
