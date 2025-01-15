@@ -6,7 +6,7 @@ import { EThemeVariables, StoreContext } from '../../app/StoreContext';
 
 export const Layout: React.FC<ILayout> = ({ children }: ILayout) => {
   const { theme, lang } = React.useContext(StoreContext);
-  const className = clsx('relative', theme === EThemeVariables.DARK ? 'bg-black text-w-100' : '');
+  const className = clsx('relative min-h-screen', theme === EThemeVariables.DARK ? 'bg-black text-w-100' : '');
 
   return (
     <div className={className} lang={lang}>
