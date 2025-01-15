@@ -47,7 +47,7 @@ export const CardDescription: React.FC<Partial<IGoodsItem>> = ({ title, isInStoc
           {sizes &&
             sizes.map((item) => {
               const sizeClass = clsx(
-                'w-10 aspect-square  border-[1px] border-solid',
+                'w-10 aspect-square border-[1px] border-solid',
                 currentSize === item ? 'border-b-900 text-b-900' : 'border-b-100 text-b-500',
                 'rounded font-medium text-xs leading-6 uppercase'
               );

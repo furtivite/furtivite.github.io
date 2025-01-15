@@ -1,12 +1,12 @@
 import type { Meta } from '@storybook/react';
-import { Header } from '../entities';
+import { LangSwitcherBtn } from '../shared';
 import StoreDecorator from '../../.storybook/decorators/StoreDecorator';
 
-const meta: Meta<typeof Header> = {
-  component: Header,
+const meta: Meta<typeof LangSwitcherBtn> = {
+  component: LangSwitcherBtn,
   decorators: [StoreDecorator],
   tags: ['autodocs'],
-  title: 'UI/Header',
+  title: 'UI/Btns/LangSwitcherBtn',
 };
 
 export default meta;
