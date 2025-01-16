@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { StockStatus } from '../components';
+import { StockStatus } from '../shared';
 
 const meta: Meta<typeof StockStatus> = {
   title: 'UI/Cards/components/StockItemStatus',

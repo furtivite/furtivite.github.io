@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { CardImage } from '../components/index';
+import { CardImage } from '../entities/index';
 import { goods } from '../assets/goods';
 
 const meta: Meta<typeof CardImage> = {

@@ -1,4 +1,4 @@
-import { EGoodsSizes, IGoodsItem } from '../components/interfaces';
+import { EGoodsSizes, IGoodsItem } from '../entities/interfaces';
 
 const image1 = 'https://github.com/furtivite/cdn.furtivite.github.io/blob/main/images/goods/1/small.png?raw=true';
 const image1big = 'https://github.com/furtivite/cdn.furtivite.github.io/blob/main/images/goods/1/big.png?raw=true';

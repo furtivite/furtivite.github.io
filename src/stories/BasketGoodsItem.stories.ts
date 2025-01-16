@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { BasketGoodsItem } from '../components/index';
+import { BasketGoodsItem } from '../entities';
 import { goods } from '../assets/goods';
 
 const meta: Meta<typeof BasketGoodsItem> = {

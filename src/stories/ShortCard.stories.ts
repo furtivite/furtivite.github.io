@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { ShortCard } from '../components/index';
+import { ShortCard } from '../entities';
 import { goods } from '../assets/goods';
 
 const meta: Meta<typeof ShortCard> = {

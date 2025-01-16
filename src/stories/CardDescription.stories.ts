@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { CardDescription } from '../components/index';
+import { CardDescription } from '../entities/index';
 import { goods } from '../assets/goods';
 
 const meta: Meta<typeof CardDescription> = {
