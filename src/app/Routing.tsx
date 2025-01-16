@@ -5,12 +5,12 @@ import { MainPage, Store, StoreBasket, StoreCard } from 'src/pages';
 
 export const Routing: React.FC = () => {
   const pages: RouteProps[] = [
+    // {
+    //   path: '/',
+    //   element: <MainPage />,
+    // },
     {
       path: '/',
-      element: <MainPage />,
-    },
-    {
-      path: '/store',
       element: <Store />,
     },
     {
