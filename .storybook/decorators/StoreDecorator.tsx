@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   defaultContext,
   ELangVariables,
@@ -11,6 +12,7 @@ export default function StoreDecorator(Story: any) {
   const [contextValue, setContextValue] = React.useState<IStoreContext>(defaultContext);
 
   const { theme, lang } = contextValue;
+  const { i18n } = useTranslation();
 
   const themeSwitchHandler = (): void => {
     if (theme === 'light') {
@@ -23,8 +25,10 @@ export default function StoreDecorator(Story: any) {
   const langSwitchHandler = (): void => {
     if (lang === 'ru') {
       setContextValue({ ...contextValue, lang: ELangVariables.EN });
+      i18n.changeLanguage('en-US');
     } else {
       setContextValue({ ...contextValue, lang: ELangVariables.RU });
+      i18n.changeLanguage('ru-RU');
     }
   };
 
