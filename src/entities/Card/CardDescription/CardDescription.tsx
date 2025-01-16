@@ -87,7 +87,9 @@ export const CardDescription: React.FC<Partial<IGoodsItem>> = ({ title, isInStoc
         <Counter counter={1} />
       </div>
       <div className="flex flex-col mt-10">
-        <Btn isDisabled={!isInStock}>Add to cart</Btn>
+        <Btn onClick={() => null} isDisabled={!isInStock}>
+          {t('card.addToCart')}
+        </Btn>
         <p className={sectionTitleClassName}>{t('card.offer')}</p>
       </div>
     </div>

@@ -8,7 +8,7 @@ export const AddToCartBtn: React.FC<IBtn & ICounter> = ({ isDisabled, counter, c
   }
 
   return (
-    <Btn isDisabled={isDisabled}>
+    <Btn onClick={() => null} isDisabled={isDisabled}>
       <div className="flex justify-center items-center gap-[6px]">
         {children}
         <img

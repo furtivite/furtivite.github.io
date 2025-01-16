@@ -25,6 +25,7 @@ export const resources = {
         quantity: 'QUANTITY',
         offer: '\u2013\u00A0Free shipping on\u00A0orders $100+',
         details: 'Details',
+        addToCart: 'Add to Cart',
       },
       basket: {
         color: 'Color',
@@ -36,6 +37,10 @@ export const resources = {
       },
       mainPage: {
         placeholder: 'Enter the value',
+        showBtn: 'Show modal',
+      },
+      modal: {
+        close: 'Close modal window',
       },
     },
   },
@@ -65,6 +70,7 @@ export const resources = {
         quantity: 'КОЛИЧЕСТВО',
         offer: '\u2013\u00A0Бесплатная доставка заказов от\u00A0$100',
         details: 'Описание',
+        addToCart: 'Добавить в корзину',
       },
       basket: {
         color: 'Цвет',
@@ -76,6 +82,10 @@ export const resources = {
       },
       mainPage: {
         placeholder: 'Введите значение',
+        showBtn: 'Показать модальное окно',
+      },
+      modal: {
+        close: 'Закрыть модальное окно',
       },
     },
   },

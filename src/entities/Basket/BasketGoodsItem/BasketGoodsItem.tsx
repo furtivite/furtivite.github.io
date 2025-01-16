@@ -38,7 +38,7 @@ export const BasketGoodsItem: React.FC<IBasketGoodsItem> = ({ size, color, count
         <p className={priceClassName}>${price}</p>
         <div className="flex gap-3">
           <Counter counter={counter} />
-          <DeleteBtn />
+          <DeleteBtn onClick={() => null} />
         </div>
       </div>
     </article>
