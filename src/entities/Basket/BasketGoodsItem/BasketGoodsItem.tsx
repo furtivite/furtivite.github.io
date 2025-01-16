@@ -1,10 +1,12 @@
 import React from 'react';
 import clsx from 'clsx';
+import { useTranslation } from 'react-i18next';
 import { IBasketGoodsItem } from '../../../entities/interfaces';
 import { Counter, DeleteBtn } from '../../../shared';
 
 export const BasketGoodsItem: React.FC<IBasketGoodsItem> = ({ size, color, counter, title, price, image }) => {
   const colorClass = clsx('w-3 aspect-square rounded-full', color);
+  const { t } = useTranslation();
 
   return (
     <article className="flex justify-between font-inter">
@@ -15,10 +17,10 @@ export const BasketGoodsItem: React.FC<IBasketGoodsItem> = ({ size, color, count
         <div>
           <h1 className="font-semibold text-sm text-b-900 leading-7">{title}</h1>
           <div className="flex items-baseline gap-2 font-medium text-xs text-b-500 leading-6">
-            <p>Color:</p>
+            <p>{t('basket.color')}</p>
             <div className={colorClass} />
             <p>
-              &nbsp;&mdash; Size: <span className="uppercase">{size}</span>
+              &nbsp;&mdash; {t('basket.size')}: <span className="uppercase">{size}</span>
             </p>
           </div>
         </div>

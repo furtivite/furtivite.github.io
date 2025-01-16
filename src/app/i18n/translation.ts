@@ -2,6 +2,11 @@ export const resources = {
   en: {
     translation: {
       storeName: 'Ecommerce',
+      tempLinks: {
+        toMain: 'to Main Page',
+        toCard: 'to Card',
+        toBasket: 'to Basket',
+      },
       card: {
         stockStatus: {
           in: 'IN STOCK',
@@ -21,11 +26,24 @@ export const resources = {
         offer: '\u2013\u00A0Free shipping on\u00A0orders $100+',
         details: 'Details',
       },
+      basket: {
+        color: 'Color',
+        size: 'Size',
+      },
+      counter: {
+        increase: 'Increase',
+        decrease: 'Decrease',
+      },
     },
   },
   ru: {
     translation: {
       storeName: 'Ecommerce.RU',
+      tempLinks: {
+        toMain: 'На главную',
+        toCard: 'В карточку',
+        toBasket: 'В корзину',
+      },
       card: {
         stockStatus: {
           in: 'В НАЛИЧИИ',
@@ -44,6 +62,14 @@ export const resources = {
         quantity: 'КОЛИЧЕСТВО',
         offer: '\u2013\u00A0Бесплатная доставка заказов от\u00A0$100',
         details: 'Описание',
+      },
+      basket: {
+        color: 'Цвет',
+        size: 'Размер',
+      },
+      counter: {
+        increase: 'Увеличить количество',
+        decrease: 'Уменьшить количество',
       },
     },
   },

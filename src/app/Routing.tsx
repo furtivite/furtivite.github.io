@@ -1,9 +1,9 @@
 import { nanoid } from 'nanoid';
 import React from 'react';
 import { BrowserRouter, Route, RouteProps, Routes } from 'react-router';
-import { MainPage, Store } from 'src/pages';
+import { MainPage, Store, StoreBasket, StoreCard } from 'src/pages';
 
-export const MainRouting: React.FC = () => {
+export const Routing: React.FC = () => {
   const pages: RouteProps[] = [
     {
       path: '/',
@@ -12,6 +12,14 @@ export const MainRouting: React.FC = () => {
     {
       path: '/store',
       element: <Store />,
+    },
+    {
+      path: '/store/basket',
+      element: <StoreBasket />,
+    },
+    {
+      path: '/store/card',
+      element: <StoreCard />,
     },
   ];
 

@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react';
-import i18n from '../src/i18n/config';
+import i18n from '../src/app/i18n/config';
 import '!style-loader!css-loader!postcss-loader!tailwindcss/tailwind.css';
 
 const preview: Preview = {

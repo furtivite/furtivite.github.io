@@ -1,8 +1,8 @@
 import React from 'react';
-import { MainRouting } from './MainRouting';
+import { Routing } from './Routing';
 
 function App() {
-  return <MainRouting />;
+  return <Routing />;
 }
 
 export default App;
