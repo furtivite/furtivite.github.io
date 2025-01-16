@@ -4,22 +4,21 @@ import { BrowserRouter, Route, RouteProps, Routes } from 'react-router';
 import { MainPage, Store, StoreBasket, StoreCard } from 'src/pages';
 
 export const Routing: React.FC = () => {
-  const home = 'furtivite.github.io';
   const pages: RouteProps[] = [
     {
-      path: `${home}/`,
+      path: '/',
       element: <MainPage />,
     },
     {
-      path: `${home}/store/`,
+      path: '/store',
       element: <Store />,
     },
     {
-      path: `${home}/store/basket`,
+      path: '/store/basket',
       element: <StoreBasket />,
     },
     {
-      path: `${home}/store/card`,
+      path: '/store/card',
       element: <StoreCard />,
     },
   ];
