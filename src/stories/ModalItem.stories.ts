@@ -1,9 +1,9 @@
 import type { Meta } from '@storybook/react';
-import { Modal } from '../entities';
+import { ModalItem } from '../entities';
 
-const meta: Meta<typeof Modal> = {
-  title: 'UI/Modal/Modal',
-  component: Modal,
+const meta: Meta<typeof ModalItem> = {
+  title: 'UI/Modal/ModalItem',
+  component: ModalItem,
   tags: ['autodocs'],
 };
 

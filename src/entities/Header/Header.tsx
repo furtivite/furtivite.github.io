@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
   const isDarkTheme = theme === EThemeVariables.DARK;
   const className = clsx(
     'sticky top-0 py-[22px] border-b-[1px] border-solid',
-    isDarkTheme ? 'border-b-900' : 'border-b-100'
+    isDarkTheme ? 'bg-black border-b-900' : 'bg-white border-b-100'
   );
   const { t } = useTranslation();
 

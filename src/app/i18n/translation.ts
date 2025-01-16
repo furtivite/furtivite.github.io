@@ -34,6 +34,9 @@ export const resources = {
         increase: 'Increase',
         decrease: 'Decrease',
       },
+      mainPage: {
+        placeholder: 'Enter the value',
+      },
     },
   },
   ru: {
@@ -70,6 +73,9 @@ export const resources = {
       counter: {
         increase: 'Увеличить количество',
         decrease: 'Уменьшить количество',
+      },
+      mainPage: {
+        placeholder: 'Введите значение',
       },
     },
   },

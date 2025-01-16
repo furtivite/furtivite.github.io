@@ -4,9 +4,11 @@ import '../../app/tailwind.css';
 import { defaultContext, ELangVariables, EThemeVariables, IStoreContext, StoreContext } from '../../app/StoreContext';
 import { Layout } from '../../entities';
 import { nanoid } from 'nanoid';
+import { Input } from 'src/shared';
 
 export const Store: React.FC = () => {
   const [contextValue, setContextValue] = React.useState<IStoreContext>(defaultContext);
+  const [inputValue, setInputValue] = React.useState<string>('');
 
   const { theme, lang } = contextValue;
   const { i18n, t } = useTranslation();
@@ -41,6 +43,10 @@ export const Store: React.FC = () => {
     },
   ];
 
+  const changeInputValue = (value: string): void => {
+    setInputValue(value);
+  };
+
   return (
     <StoreContext.Provider value={{ theme, lang, themeSwitchHandler, langSwitchHandler }}>
       <Layout>
@@ -53,6 +59,9 @@ export const Store: React.FC = () => {
             ))}
           </ol>
         </nav>
+        <div className="container mx-auto my-4 px-3">
+          <Input placeholder={t('mainPage.placeholder')} value={inputValue} changeInputValue={changeInputValue} />
+        </div>
       </Layout>
     </StoreContext.Provider>
   );
