@@ -33,7 +33,7 @@ export const StoreBasket: React.FC = () => {
   // TODO: Delete this Links and translation in future
   const tempLinks = [
     {
-      path: '/store',
+      path: '/',
       text: t('tempLinks.toMain'),
     },
     {
