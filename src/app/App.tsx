@@ -1,14 +1,10 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import { BrowserRouter, Route, RouteProps, Routes } from 'react-router';
-import { MainPage, Store, StoreBasket, StoreCard } from 'src/pages';
+import { Store, StoreBasket, StoreCard } from 'src/pages';
 
 function App() {
   const pages: RouteProps[] = [
-    // {
-    //   path: '/',
-    //   element: <MainPage />,
-    // },
     {
       path: '/',
       element: <Store />,
