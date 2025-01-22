@@ -8,7 +8,7 @@ export const ShortCard: React.FC<IGoodsItem> = ({ isInStock, title, price, detai
 
   return (
     <article className="flex flex-col gap-3 max-w-[274px] font-inter px-[6px] py-4">
-      <div className="min-h-[367px] rounded-sm overflow-hidden">
+      <div className="min-h-[367px] bg-w-100 rounded-sm overflow-hidden">
         <img src={imageListing} alt="" />
       </div>
       <AddToCartBtn onClick={() => null} counter={0} isDisabled={!isInStock}>
