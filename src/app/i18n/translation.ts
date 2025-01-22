@@ -6,6 +6,7 @@ export const resources = {
         toMain: 'to Main Page',
         toCard: 'to Card',
         toBasket: 'to Basket',
+        toList: 'to Goods List',
       },
       card: {
         stockStatus: {
@@ -51,6 +52,7 @@ export const resources = {
         toMain: 'На главную',
         toCard: 'В карточку',
         toBasket: 'В корзину',
+        toList: 'К списку товаров',
       },
       card: {
         stockStatus: {

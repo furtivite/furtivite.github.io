@@ -3,9 +3,9 @@ import { nanoid } from 'nanoid';
 import { BrowserRouter, Route, RouteProps, Routes } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import './tailwind.css';
-import { Store, StoreBasket, StoreCard } from 'src/pages';
+import { Layout } from '../entities';
+import { Store, StoreBasket, StoreCard, StoreList } from '../pages';
 import { defaultContext, ELangVariables, EThemeVariables, IStoreContext, StoreContext } from './StoreContext';
-import { Layout } from 'src/entities';
 
 function App() {
   const [contextValue, setContextValue] = React.useState<IStoreContext>(defaultContext);
@@ -21,6 +21,10 @@ function App() {
     {
       path: '/card',
       element: <StoreCard />,
+    },
+    {
+      path: '/list',
+      element: <StoreList />,
     },
   ];
   const { theme, lang } = contextValue;
@@ -57,6 +61,10 @@ function App() {
     {
       path: '/basket',
       text: t('tempLinks.toBasket'),
+    },
+    {
+      path: '/list',
+      text: t('tempLinks.toList'),
     },
   ];
   const currentUrl = window.location.pathname;
