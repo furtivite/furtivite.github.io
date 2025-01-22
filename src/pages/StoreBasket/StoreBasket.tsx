@@ -1,12 +1,12 @@
 import React from 'react';
-import { BasketGoodsItem } from '../../entities';
+import { BasketGoodsItem, Container } from '../../entities';
 import { goods } from '../../assets/goods';
 
 export const StoreBasket: React.FC = () => {
   const item = goods[0];
 
   return (
-    <div className="container mx-auto my-4 px-3">
+    <Container>
       <BasketGoodsItem
         size={item.sizes[0]}
         color={item.colors[0]}
@@ -15,6 +15,6 @@ export const StoreBasket: React.FC = () => {
         price={item.price}
         image={item.imageListing}
       />
-    </div>
+    </Container>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Modal } from '../../entities';
+import { Container, Modal } from '../../entities';
 import { Btn, Input } from 'src/shared';
 
 export const Store: React.FC = () => {
@@ -19,7 +19,7 @@ export const Store: React.FC = () => {
 
   return (
     <>
-      <div className="container mx-auto my-4 px-3">
+      <Container>
         <div className="flex gap-3">
           <div className="flex w-[75%]">
             <Input placeholder={t('mainPage.placeholder')} value={inputValue} changeInputValue={changeInputValue} />
@@ -28,7 +28,7 @@ export const Store: React.FC = () => {
             {t('mainPage.showBtn')}
           </Btn>
         </div>
-      </div>
+      </Container>
       {isModalVisible && (
         <Modal changeVisibility={changeModalVisibility}>
           <p>{inputValue}</p>
