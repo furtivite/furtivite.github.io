@@ -17,7 +17,9 @@ export const Header: React.FC = () => {
   return (
     <header className={className}>
       <div className="flex flex-row justify-between items-center container mx-auto px-3">
-        <Logo type={ELogoType.DARK} text={t('storeName')} />
+        <a href="/">
+          <Logo type={ELogoType.DARK} text={t('storeName')} />
+        </a>
         <div className="flex flex-row justify-between items-center gap-4">
           <ThemeSwitcherBtn />
           <LangSwitcherBtn />
