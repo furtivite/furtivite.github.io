@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { Container, Modal } from '../../entities';
 import { Btn, Input } from 'src/shared';
@@ -9,12 +10,19 @@ export const Store: React.FC = () => {
 
   const { t } = useTranslation();
 
+  const eraseInput = (): void => {
+    setInputValue('');
+  };
+
   const changeInputValue = (value: string): void => {
     setInputValue(value);
   };
 
   const changeModalVisibility = (): void => {
     setIsModalVisible(!isModalVisible);
+    if (isModalVisible) {
+      eraseInput();
+    }
   };
 
   return (
@@ -29,11 +37,13 @@ export const Store: React.FC = () => {
           </Btn>
         </div>
       </Container>
-      {isModalVisible && (
-        <Modal changeVisibility={changeModalVisibility}>
-          <p>{inputValue}</p>
-        </Modal>
-      )}
+      {isModalVisible &&
+        createPortal(
+          <Modal changeVisibility={changeModalVisibility}>
+            <p>{inputValue}</p>
+          </Modal>,
+          document.body
+        )}
     </>
   );
 };
