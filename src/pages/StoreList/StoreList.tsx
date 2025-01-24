@@ -8,9 +8,13 @@ export const StoreList: React.FC = () => {
 
   return (
     <Container>
-      {myGoods.map((item) => (
-        <ShortCard key={nanoid()} {...item} />
-      ))}
+      <ul className="grid grid-cols-3">
+        {myGoods.map((item) => (
+          <li key={nanoid()}>
+            <ShortCard {...item} />
+          </li>
+        ))}
+      </ul>
     </Container>
   );
 };

@@ -19,7 +19,7 @@ function App() {
       element: <StoreBasket />,
     },
     {
-      path: '/card',
+      path: '/card/:id',
       element: <StoreCard />,
     },
     {
@@ -55,7 +55,7 @@ function App() {
       text: t('tempLinks.toMain'),
     },
     {
-      path: '/card',
+      path: '/card/1',
       text: t('tempLinks.toCard'),
     },
     {

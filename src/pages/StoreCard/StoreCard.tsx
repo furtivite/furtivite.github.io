@@ -1,9 +1,12 @@
 import React from 'react';
+import { useParams } from 'react-router';
 import { Container, FullCard } from '../../entities';
 import { goods } from '../../assets/goods';
 
 export const StoreCard: React.FC = () => {
-  const item = goods[0];
+  const { id } = useParams();
+  const itemPlace = Number(id) - 1;
+  const item = goods[itemPlace];
 
   return (
     <Container>
