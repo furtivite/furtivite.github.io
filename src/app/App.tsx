@@ -82,7 +82,7 @@ function App() {
                   <a href={item.path}>{item.text}</a>
                 </li>
               ) : (
-                <></>
+                <React.Fragment key={nanoid()}></React.Fragment>
               )
             )}
           </ol>
