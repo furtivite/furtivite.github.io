@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
   const { theme } = React.useContext(StoreContext);
   const isDarkTheme = theme === EThemeVariables.DARK;
   const className = clsx(
-    'sticky top-0 py-[22px] border-b-[1px] border-solid',
+    'sticky top-0 py-[22px] border-b-[1px] border-solid z-90',
     isDarkTheme ? 'bg-black border-b-900' : 'bg-white border-b-100'
   );
   const { t } = useTranslation();
@@ -17,7 +17,9 @@ export const Header: React.FC = () => {
   return (
     <header className={className}>
       <div className="flex flex-row justify-between items-center container mx-auto px-3">
-        <Logo type={ELogoType.DARK} text={t('storeName')} />
+        <a href="/">
+          <Logo type={ELogoType.DARK} text={t('storeName')} />
+        </a>
         <div className="flex flex-row justify-between items-center gap-4">
           <ThemeSwitcherBtn />
           <LangSwitcherBtn />

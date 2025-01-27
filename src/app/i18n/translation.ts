@@ -6,6 +6,7 @@ export const resources = {
         toMain: 'to Main Page',
         toCard: 'to Card',
         toBasket: 'to Basket',
+        toList: 'to Goods List',
       },
       card: {
         stockStatus: {
@@ -39,6 +40,9 @@ export const resources = {
         placeholder: 'Enter the value',
         showBtn: 'Show modal',
       },
+      listPage: {
+        addMore: 'Add more',
+      },
       modal: {
         close: 'Close modal window',
       },
@@ -51,6 +55,7 @@ export const resources = {
         toMain: 'На главную',
         toCard: 'В карточку',
         toBasket: 'В корзину',
+        toList: 'К списку товаров',
       },
       card: {
         stockStatus: {
@@ -83,6 +88,9 @@ export const resources = {
       mainPage: {
         placeholder: 'Введите значение',
         showBtn: 'Показать модальное окно',
+      },
+      listPage: {
+        addMore: 'Добавить ещё',
       },
       modal: {
         close: 'Закрыть модальное окно',
