@@ -40,6 +40,9 @@ export const resources = {
         placeholder: 'Enter the value',
         showBtn: 'Show modal',
       },
+      listPage: {
+        addMore: 'Add more',
+      },
       modal: {
         close: 'Close modal window',
       },
@@ -85,6 +88,9 @@ export const resources = {
       mainPage: {
         placeholder: 'Введите значение',
         showBtn: 'Показать модальное окно',
+      },
+      listPage: {
+        addMore: 'Добавить ещё',
       },
       modal: {
         close: 'Закрыть модальное окно',

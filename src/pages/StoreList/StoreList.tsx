@@ -1,5 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
+import { useTranslation } from 'react-i18next';
 import { goods } from '../../assets/goods';
 import { Container, ShortCard } from '../../entities';
 import { IGoodsItem } from '../../entities/interfaces';
@@ -25,6 +26,8 @@ export const StoreList: React.FC = () => {
     setLastId(lastId + newCount);
   };
 
+  const { t } = useTranslation();
+
   return (
     <Container>
       <ul className="grid grid-cols-3 mb-4">
@@ -35,7 +38,7 @@ export const StoreList: React.FC = () => {
         ))}
       </ul>
       <div className="flex gap-3">
-        <Btn onClick={cardGenerator}>Добавить ещё</Btn>
+        <Btn onClick={cardGenerator}>{t('listPage.addMore')}</Btn>
       </div>
     </Container>
   );
