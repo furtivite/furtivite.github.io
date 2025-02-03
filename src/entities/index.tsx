@@ -1,5 +1,5 @@
 export { BasketGoodsItem } from './Basket';
-export { CardDescription, CardImage, FullCard, ShortCard } from './Card';
+export * from './Card';
 export { Container } from './Container/Container';
 export { Header } from './Header/Header';
 export { Layout } from './Layout/Layout';
