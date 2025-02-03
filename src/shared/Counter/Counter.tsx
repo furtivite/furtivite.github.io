@@ -4,6 +4,18 @@ import clsx from 'clsx';
 import { ICounter } from '../../shared/interfaces';
 import { EThemeVariables, StoreContext } from '../../app/StoreContext';
 
+interface ICounterBtnProps {
+  src: string;
+  text: string;
+}
+
+const CounterBtn: React.FC<ICounterBtnProps> = ({ src, text }) => (
+  <button>
+    <img src={src} alt="" width={20} height={20} />
+    <span className="sr-only">{text}</span>
+  </button>
+);
+
 export const Counter: React.FC<ICounter> = ({ counter }) => {
   const { t } = useTranslation();
   const { theme } = React.useContext(StoreContext);
@@ -16,25 +28,15 @@ export const Counter: React.FC<ICounter> = ({ counter }) => {
 
   return (
     <div className={className}>
-      <button>
-        <img
-          src="https://raw.githubusercontent.com/furtivite/cdn.furtivite.github.io/refs/heads/main/images/minus.svg"
-          alt=""
-          width={20}
-          height={20}
-        />
-        <span className="sr-only">{t('counter.decrease')}</span>
-      </button>
+      <CounterBtn
+        src="https://raw.githubusercontent.com/furtivite/cdn.furtivite.github.io/refs/heads/main/images/minus.svg"
+        text={t('counter.decrease')}
+      />
       {counter}
-      <button>
-        <img
-          src="https://raw.githubusercontent.com/furtivite/cdn.furtivite.github.io/refs/heads/main/images/plus.svg"
-          alt=""
-          width={20}
-          height={20}
-        />
-        <span className="sr-only">{t('counter.increase')}</span>
-      </button>
+      <CounterBtn
+        src="https://raw.githubusercontent.com/furtivite/cdn.furtivite.github.io/refs/heads/main/images/plus.svg"
+        text={t('counter.increase')}
+      />
     </div>
   );
 };
