@@ -5,7 +5,15 @@ export enum EGoodsSizes {
   XXL = 'xxl',
 }
 
-export interface IGoodsItem {
+export interface IGoogsColor {
+  colors: string[];
+}
+
+export interface IGoodsSizes {
+  sizes: EGoodsSizes[];
+}
+
+export interface IGoodsItem extends IGoogsColor, IGoodsSizes {
   id: number;
   isInStock: boolean;
   title: string;
@@ -14,5 +22,4 @@ export interface IGoodsItem {
   imageListing: string;
   imageFull: string[];
   colors: string[];
-  sizes: EGoodsSizes[];
 }

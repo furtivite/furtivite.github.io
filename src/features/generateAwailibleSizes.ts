@@ -1,4 +1,4 @@
-import { EGoodsSizes } from 'src/entities/interfaces';
+import { EGoodsSizes } from '../entities/interfaces';
 import generateRandomNumber from './generateRandomNumber';
 
 const generateRandomSizes = (number: number): EGoodsSizes[] => {
