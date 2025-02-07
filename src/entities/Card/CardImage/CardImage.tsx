@@ -10,25 +10,27 @@ export const CardImage: React.FC<Partial<IGoodsItem>> = ({ imageFull }) => {
     setSliderNumber(id);
   };
 
+  const renderBtns = React.useMemo(() => {
+    return imageFull.map((_, index) => {
+      const btnClassName = clsx(
+        'w-2',
+        'aspect-square',
+        index === sliderNumber ? 'bg-b-900' : 'bg-b-200',
+        'rounded-full'
+      );
+
+      return (
+        <button key={nanoid()} className={btnClassName} onClick={() => changeSlider(index)}>
+          <span className="sr-only">Выбрать изображение №{index}</span>
+        </button>
+      );
+    });
+  }, [imageFull, sliderNumber]);
+
   return (
     <div className="flex flex-col items-center gap-4 p-8 bg-w-100 aspect-square rounded">
       <img src={imageFull[sliderNumber]} alt="" />
-      <div className="flex gap-3">
-        {imageFull.map((item, index) => {
-          const btnClassName = clsx(
-            'w-2',
-            'aspect-square',
-            index === sliderNumber ? 'bg-b-900' : 'bg-b-200',
-            'rounded-full'
-          );
-
-          return (
-            <button key={nanoid()} className={btnClassName} onClick={() => changeSlider(index)}>
-              <span className="sr-only">Выбрать изображение №{index}</span>
-            </button>
-          );
-        })}
-      </div>
+      <div className="flex gap-3">{renderBtns}</div>
     </div>
   );
 };
