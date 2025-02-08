@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { goods } from '../../assets/goods';
 import { Container, ShortCard } from '../../entities';
 import { IGoodsItem } from '../../entities/interfaces';
-import { Btn } from '../../shared';
+import { Btn, RangeSlider } from '../../shared';
 import generateRandomCardList from '../../features/generateRandomCardList';
 
 export const StoreList: React.FC = () => {
@@ -30,6 +30,7 @@ export const StoreList: React.FC = () => {
 
   return (
     <Container>
+      <RangeSlider min={0} max={100} onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)} />
       <ul className="grid grid-cols-3 mb-4">
         {myGoods.map((item) => (
           <li key={nanoid()}>
