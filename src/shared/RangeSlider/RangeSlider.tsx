@@ -1,14 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
 import './RangeSlider.css';
+import { IRangeSlider } from './interfaces';
 
-interface Props {
-  min: number;
-  max: number;
-  onChange: ({ min, max }: { min: number; max: number }) => void;
-}
-
-export const RangeSlider: React.FC<Props> = ({ min, max, onChange }) => {
+export const RangeSlider: React.FC<IRangeSlider> = ({ min, max, onChange }) => {
   const [minVal, setMinVal] = React.useState(min);
   const [maxVal, setMaxVal] = React.useState(max);
 

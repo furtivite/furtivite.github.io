@@ -6,6 +6,7 @@ import { AsideFlter, AsideLayout, Container, ShortCard } from '../../entities';
 import { IGoodsItem } from '../../entities/interfaces';
 import { Btn, RangeSlider } from '../../shared';
 import generateRandomCardList from '../../features/generateRandomCardList';
+import { IRangeSliderChange } from 'src/shared/interfaces';
 
 export const StoreList: React.FC = () => {
   const [myGoods, setMyGoods] = React.useState<IGoodsItem[]>([]);
@@ -28,12 +29,16 @@ export const StoreList: React.FC = () => {
 
   const { t } = useTranslation();
 
+  const changePriceFilter = ({ min, max }: IRangeSliderChange) => {
+    console.log(`min = ${min}, max = ${max}`);
+  };
+
   return (
     <Container>
       <div className="flex items-start gap-[21px]">
         <AsideLayout>
           <AsideFlter title="Price">
-            <RangeSlider min={0} max={100} onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)} />
+            <RangeSlider min={0} max={100} onChange={changePriceFilter} />
           </AsideFlter>
         </AsideLayout>
         <section>
