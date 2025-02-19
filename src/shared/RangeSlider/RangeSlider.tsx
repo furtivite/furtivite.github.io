@@ -1,42 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import clsx from 'clsx';
 import './RangeSlider.css';
 import { IRangeSlider } from './interfaces';
 
 export const RangeSlider: React.FC<IRangeSlider> = ({ min, max, onChange }) => {
-  const [minVal, setMinVal] = React.useState(min);
-  const [maxVal, setMaxVal] = React.useState(max);
+  const [minVal, setMinVal] = useState(min);
+  const [maxVal, setMaxVal] = useState(max);
 
-  const minValRef = React.useRef(null);
-  const maxValRef = React.useRef(null);
-  const range = React.useRef(null);
+  const minValRef = useRef(null);
+  const maxValRef = useRef(null);
+  const range = useRef(null);
 
   const getPercent = React.useCallback((value: number) => Math.round(((value - min) / (max - min)) * 100), [min, max]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (maxValRef.current) {
       const minPercent = getPercent(minVal);
       const maxPercent = getPercent(+maxValRef.current.value);
-
       if (range.current) {
         range.current.style.left = `${minPercent}%`;
         range.current.style.width = `${maxPercent - minPercent}%`;
       }
-    }
-  }, [minVal, getPercent]);
-
-  React.useEffect(() => {
-    if (minValRef.current) {
+    } else if (minValRef.current) {
       const minPercent = getPercent(+minValRef.current.value);
       const maxPercent = getPercent(maxVal);
-
       if (range.current) {
         range.current.style.width = `${maxPercent - minPercent}%`;
       }
     }
-  }, [maxVal, getPercent]);
+  }, [minVal, getPercent, maxVal]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     onChange({ min: minVal, max: maxVal });
   }, [minVal, maxVal, onChange]);
 
