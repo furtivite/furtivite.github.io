@@ -46,6 +46,10 @@ export const resources = {
       modal: {
         close: 'Close modal window',
       },
+      collapse: {
+        isClosed: 'Show more',
+        isOpened: 'Hide',
+      },
     },
   },
   ru: {
@@ -94,6 +98,10 @@ export const resources = {
       },
       modal: {
         close: 'Закрыть модальное окно',
+      },
+      collapse: {
+        isClosed: 'Показать больше',
+        isOpened: 'Скрыть',
       },
     },
   },

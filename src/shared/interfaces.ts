@@ -1,4 +1,5 @@
 export * from './Btns/interfaces';
+export * from './Collapse/interfaces';
 export * from './Counter/interfaces';
 export * from './Logo/interfaces';
 export * from './RangeSlider/interfaces';
