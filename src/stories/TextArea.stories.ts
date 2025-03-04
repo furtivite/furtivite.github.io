@@ -1,11 +1,11 @@
 import type { Meta } from '@storybook/react';
-import { Input } from '../shared';
+import { TextArea } from '../shared';
 
-const meta: Meta<typeof Input> = {
-  component: Input,
+const meta: Meta<typeof TextArea> = {
+  component: TextArea,
   decorators: [],
   tags: ['autodocs'],
-  title: 'UI/Inputs/Input',
+  title: 'UI/Inputs/TextArea',
 };
 
 export default meta;

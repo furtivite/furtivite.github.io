@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import { IInput } from './interfaces';
-import { EThemeVariables, StoreContext } from '../../app/StoreContext';
+import { IInput } from '../interfaces';
+import { EThemeVariables, StoreContext } from '../../../app/StoreContext';
 
 export const Input: React.FC<IInput> = ({
   value,
