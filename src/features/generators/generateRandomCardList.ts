@@ -1,4 +1,4 @@
-import { IGoodsItem } from '../entities/interfaces';
+import { IGoodsItem } from '../../entities/interfaces';
 import generateRandomCard from './generateRandomCard';
 
 const generateRandomCardList = (lastId: number, count: number): IGoodsItem[] => {
