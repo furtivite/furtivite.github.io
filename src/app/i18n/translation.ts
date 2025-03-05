@@ -50,6 +50,16 @@ export const resources = {
         isClosed: 'Show more',
         isOpened: 'Hide',
       },
+      forms: {
+        name: {
+          label: 'Name',
+          placeholder: 'Enter a name',
+        },
+        about: {
+          label: 'About me',
+          placeholder: 'Tell us about yourself',
+        },
+      },
     },
   },
   ru: {
@@ -102,6 +112,16 @@ export const resources = {
       collapse: {
         isClosed: 'Показать больше',
         isOpened: 'Скрыть',
+      },
+      forms: {
+        name: {
+          label: 'Имя',
+          placeholder: 'Введите имя',
+        },
+        about: {
+          label: 'Обо мне',
+          placeholder: 'Расскажите о себе',
+        },
       },
     },
   },
