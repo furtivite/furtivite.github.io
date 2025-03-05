@@ -54,11 +54,14 @@ export const resources = {
         name: {
           label: 'Name',
           placeholder: 'Enter a name',
+          requiredMessage: 'Please enter your name.',
+          patternMessage: 'Invalid characters in the input field',
         },
         about: {
           label: 'About me',
           placeholder: 'Tell us about yourself',
         },
+        submit: 'Submit',
       },
     },
   },
@@ -117,11 +120,14 @@ export const resources = {
         name: {
           label: 'Имя',
           placeholder: 'Введите имя',
+          requiredMessage: 'Пожалуйста, введите ваше имя',
+          patternMessage: 'Недопустимые символы в поле ввода',
         },
         about: {
           label: 'Обо мне',
           placeholder: 'Расскажите о себе',
         },
+        submit: 'Отправить',
       },
     },
   },

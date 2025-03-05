@@ -1,7 +1,9 @@
 import React from 'react';
+import clsx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
-import { Input, TextArea } from '../../shared';
+import { EThemeVariables, StoreContext } from '../../app/StoreContext';
+import { Btn } from '../../shared';
 
 type TFormData = {
   name: string;
@@ -12,6 +14,7 @@ export const ProfileForm: React.FC = () => {
   const { t } = useTranslation();
   const {
     handleSubmit,
+    register,
     reset,
     formState: { errors },
   } = useForm<TFormData>();
@@ -21,19 +24,52 @@ export const ProfileForm: React.FC = () => {
     reset();
   };
 
+  const { theme } = React.useContext(StoreContext);
+  const isDarkTheme = theme === EThemeVariables.DARK;
+
+  const className = clsx(
+    'w-full p-2 border-[1px] border-solid active:outline focus:outline rounded',
+    isDarkTheme
+      ? 'bg-b-900 border-b-100 active:outline-w-900 focus:outline-w-900'
+      : 'bg-w-900 active:outline-b-900 border-b-200 focus:outline-b-900'
+  );
+
   return (
-    <form className="grid gap-2" onSubmit={handleSubmit(onSubmit)}>
+    <form name="profile" className="grid gap-2" onSubmit={handleSubmit(onSubmit)}>
       <label className="grid gap-2">
         {t('forms.name.label')}
         <div>
-          <Input value="" placeholder={t('forms.name.placeholder')} required />
+          <input
+            {...register('name', {
+              required: t('forms.name.requiredMessage'),
+              pattern: {
+                value: /^[A-Za-zА-Яа-я]+$/g,
+                message: t('forms.name.patternMessage'),
+              },
+            })}
+            className={className}
+            placeholder={t('forms.name.placeholder')}
+            name="name"
+            required
+            form="profile"
+          />
           {errors.name && <p className="text-red-600">{errors.name.message}</p>}
         </div>
       </label>
       <label className="grid gap-2">
         {t('forms.about.label')}
-        <TextArea value="" placeholder={t('forms.about.placeholder')} required />
+        <textarea
+          {...register('aboutMe')}
+          className={className}
+          placeholder={t('forms.about.placeholder')}
+          name="about"
+          required
+          form="profile"
+        />
       </label>
+      <Btn type="submit" onClick={() => null}>
+        {t('forms.submit')}
+      </Btn>
     </form>
   );
 };
