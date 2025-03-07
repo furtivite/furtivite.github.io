@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface IBtnDefault {
   isDisabled?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
 }
 

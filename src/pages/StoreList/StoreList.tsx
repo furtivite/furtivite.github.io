@@ -5,7 +5,7 @@ import { goods } from '../../assets/goods';
 import { AsideFlter, AsideLayout, Container, ShortCard } from '../../entities';
 import { IGoodsItem } from '../../entities/interfaces';
 import { Btn, RangeSlider } from '../../shared';
-import generateRandomCardList from '../../features/generateRandomCardList';
+import { generateRandomCardList } from '../../features/generators';
 import { IRangeSliderChange } from 'src/shared/interfaces';
 
 export const StoreList: React.FC = () => {

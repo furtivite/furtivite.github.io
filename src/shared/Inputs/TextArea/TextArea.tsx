@@ -20,6 +20,7 @@ export const TextArea: React.FC<IInput> = ({
 
   const className = clsx(
     'w-full p-2 border-[1px] border-solid active:outline focus:outline rounded',
+    'disabled:bg-w-100 txt-b-700',
     isDarkTheme
       ? 'bg-b-900 border-b-100 active:outline-w-900 focus:outline-w-900'
       : 'bg-w-900 active:outline-b-900 border-b-200 focus:outline-b-900'
