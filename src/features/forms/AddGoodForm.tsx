@@ -42,7 +42,7 @@ export const AddGoodForm: React.FC = () => {
       </label>
       <input id="id" value={lastId} className={className} disabled />
       <label htmlFor="title" className="pt-2">
-        Title:
+        {t('forms.goods.title')}
       </label>
       <input
         {...register('title', {
@@ -53,7 +53,7 @@ export const AddGoodForm: React.FC = () => {
         className={className}
       />
       <label htmlFor="details" className="pt-2">
-        Details:
+        {t('forms.goods.details')}
       </label>
       <textarea
         {...register('details', {
@@ -66,7 +66,7 @@ export const AddGoodForm: React.FC = () => {
         required
       />
       <label htmlFor="price" className="pt-2">
-        Price
+        {t('forms.goods.price')}
       </label>
       <input
         {...register('price', {
