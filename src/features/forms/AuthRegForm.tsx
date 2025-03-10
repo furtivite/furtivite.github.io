@@ -64,6 +64,7 @@ export const AuthRegForm: React.FC<IAuthRegForm> = ({ type }) => {
             required
             form="auth-reg"
           />
+          {errors.login && <p className="text-red-600">{`${errors.login.message}`}</p>}
         </div>
       </label>
       <label className="grid gap-2">
@@ -83,6 +84,7 @@ export const AuthRegForm: React.FC<IAuthRegForm> = ({ type }) => {
             required
             form="auth-reg"
           />
+          {errors.password && <p className="text-red-600">{`${errors.password.message}`}</p>}
         </div>
       </label>
 
