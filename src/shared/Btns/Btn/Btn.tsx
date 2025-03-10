@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { IBtn } from '../../../shared/interfaces';
 import { EThemeVariables, StoreContext } from '../../../app/StoreContext';
 
-export const Btn: React.FC<IBtn> = ({ children, isDisabled, onClick }) => {
+export const Btn: React.FC<IBtn> = ({ children, isDisabled, onClick, type }) => {
   const { theme } = React.useContext(StoreContext);
   const isDarkTheme = theme === EThemeVariables.DARK;
 
@@ -13,7 +13,7 @@ export const Btn: React.FC<IBtn> = ({ children, isDisabled, onClick }) => {
   );
 
   return (
-    <button className={className} disabled={isDisabled} onClick={onClick}>
+    <button type={type === undefined ? 'button' : type} className={className} disabled={isDisabled} onClick={onClick}>
       {children}
     </button>
   );

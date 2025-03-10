@@ -1,7 +1,9 @@
-import generateAwailibleSizes from '../features/generateAwailibleSizes';
-import generateImageAddress from '../features/generateImageAddress';
-import generateRandomNumber from '../features/generateRandomNumber';
-import generateAwailibleColors from '../features/generateAwailibleColors';
+import {
+  generateAwailibleSizes,
+  generateImageAddress,
+  generateRandomNumber,
+  generateAwailibleColors,
+} from '../features/generators';
 import { EGoodsSizes, IGoodsItem } from '../entities/interfaces';
 
 export const goods: IGoodsItem[] = [

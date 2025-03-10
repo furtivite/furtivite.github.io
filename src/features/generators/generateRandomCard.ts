@@ -1,5 +1,5 @@
-import { goods } from '../assets/goods';
-import { EGoodsSizes, IGoodsItem } from '../entities/interfaces';
+import { goods } from '../../assets/goods';
+import { EGoodsSizes, IGoodsItem } from '../../entities/interfaces';
 import generateRandomNumber from './generateRandomNumber';
 import generateAwailibleSizes from './generateAwailibleSizes';
 import generateAwailibleColors from './generateAwailibleColors';

@@ -50,6 +50,40 @@ export const resources = {
         isClosed: 'Show more',
         isOpened: 'Hide',
       },
+      forms: {
+        name: {
+          label: 'Name',
+          placeholder: 'Enter a name',
+          requiredMessage: 'Please enter your name.',
+          patternMessage: 'Invalid characters in the input field',
+        },
+        about: {
+          label: 'About me',
+          placeholder: 'Tell us about yourself',
+        },
+        submit: 'Submit',
+        goods: {
+          title: 'Title',
+          details: 'Details',
+          price: 'Price',
+        },
+        authReg: {
+          login: {
+            label: 'Username',
+            placeholder: 'Enter your username',
+            requiredMessage: 'Enter your username',
+            patternMessage: '',
+          },
+          password: {
+            label: 'Password',
+            placeholder: 'Enter the password',
+            requiredMessage: 'Enter the password',
+            patternMessage: '',
+          },
+          submitReg: 'Register',
+          submitAuth: 'Log in',
+        },
+      },
     },
   },
   ru: {
@@ -102,6 +136,40 @@ export const resources = {
       collapse: {
         isClosed: 'Показать больше',
         isOpened: 'Скрыть',
+      },
+      forms: {
+        name: {
+          label: 'Имя',
+          placeholder: 'Введите имя',
+          requiredMessage: 'Пожалуйста, введите ваше имя',
+          patternMessage: 'Недопустимые символы в поле ввода',
+        },
+        about: {
+          label: 'Обо мне',
+          placeholder: 'Расскажите о себе',
+        },
+        submit: 'Отправить',
+        goods: {
+          title: 'Название',
+          details: 'Описание',
+          price: 'Цена',
+        },
+        authReg: {
+          login: {
+            label: 'Логин',
+            placeholder: 'Введите имя пользователя',
+            requiredMessage: 'Введите имя пользователя',
+            patternMessage: '',
+          },
+          password: {
+            label: 'Пароль',
+            placeholder: 'Введите пароль',
+            requiredMessage: 'Введите пароль',
+            patternMessage: '',
+          },
+          submitReg: 'Зарегистрироваться',
+          submitAuth: 'Войти',
+        },
       },
     },
   },
