@@ -4,7 +4,7 @@ import { BrowserRouter, Route, RouteProps, Routes } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import './tailwind.css';
 import { Layout } from '../entities';
-import { Store, StoreBasket, StoreCard, StoreList } from '../pages';
+import { AccountServicePage, Store, StoreBasket, StoreCard, StoreList } from '../pages';
 import { defaultContext, ELangVariables, EThemeVariables, IStoreContext, StoreContext } from './StoreContext';
 
 function App() {
@@ -25,6 +25,10 @@ function App() {
     {
       path: '/list',
       element: <StoreList />,
+    },
+    {
+      path: '/account-service',
+      element: <AccountServicePage />,
     },
   ];
   const { theme, lang } = contextValue;
@@ -65,6 +69,10 @@ function App() {
     {
       path: '/list',
       text: t('tempLinks.toList'),
+    },
+    {
+      path: '/account-service',
+      text: t('tempLinks.toAccountService'),
     },
   ];
   const currentUrl = window.location.pathname;
