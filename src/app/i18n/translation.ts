@@ -7,6 +7,7 @@ export const resources = {
         toCard: 'to Card',
         toBasket: 'to Basket',
         toList: 'to Goods List',
+        toAccountService: 'to Account Service',
       },
       card: {
         stockStatus: {
@@ -84,6 +85,13 @@ export const resources = {
           submitAuth: 'Log in',
         },
       },
+      accountServicePage: {
+        userDiscount: 'Discount for premium user',
+        userProductDiscount: 'A discount for a premium user on a car:',
+        commonDiscount: 'The final discount for a premium user to purchase a car:',
+        initialPrice: 'The initial price for the car:',
+        finalPrice: 'The final price for a premium user for a car:',
+      },
     },
   },
   ru: {
@@ -94,6 +102,7 @@ export const resources = {
         toCard: 'В карточку',
         toBasket: 'В корзину',
         toList: 'К списку товаров',
+        toAccountService: 'К сервису для Аккаунта',
       },
       card: {
         stockStatus: {
@@ -170,6 +179,13 @@ export const resources = {
           submitReg: 'Зарегистрироваться',
           submitAuth: 'Войти',
         },
+      },
+      accountServicePage: {
+        userDiscount: 'Скидка для премиум-пользователя',
+        userProductDiscount: 'Скидка для премиум-пользователя на машину:',
+        commonDiscount: 'Итоговая скидка для премиум-пользователя на покупку машины:',
+        initialPrice: 'Начальная цена за машину:',
+        finalPrice: 'Итоговая цена для премиум-пользователя на машину:',
       },
     },
   },
