@@ -8,6 +8,7 @@ export const resources = {
         toBasket: 'to Basket',
         toList: 'to Goods List',
         toAccountService: 'to Account Service',
+        toProfilePage: 'to Profile',
       },
       card: {
         stockStatus: {
@@ -43,6 +44,7 @@ export const resources = {
       },
       listPage: {
         addMore: 'Add more',
+        addGoodToStore: 'Add good to store',
       },
       modal: {
         close: 'Close modal window',
@@ -65,8 +67,11 @@ export const resources = {
         submit: 'Submit',
         goods: {
           title: 'Title',
+          titlePlaceholder: 'Enter goods title',
           details: 'Details',
+          detailsPlaceholder: 'Tell more about goods',
           price: 'Price',
+          pricePlaceholder: 'Enter price',
         },
         authReg: {
           login: {
@@ -103,6 +108,7 @@ export const resources = {
         toBasket: 'В корзину',
         toList: 'К списку товаров',
         toAccountService: 'К сервису для Аккаунта',
+        toProfilePage: 'К профилю',
       },
       card: {
         stockStatus: {
@@ -138,6 +144,7 @@ export const resources = {
       },
       listPage: {
         addMore: 'Добавить ещё',
+        addGoodToStore: 'Добавить новый товар',
       },
       modal: {
         close: 'Закрыть модальное окно',
@@ -160,8 +167,11 @@ export const resources = {
         submit: 'Отправить',
         goods: {
           title: 'Название',
+          titlePlaceholder: 'Введите название товара',
           details: 'Описание',
+          detailsPlaceholder: 'Введите описание товара',
           price: 'Цена',
+          pricePlaceholder: 'Введите цену товара',
         },
         authReg: {
           login: {

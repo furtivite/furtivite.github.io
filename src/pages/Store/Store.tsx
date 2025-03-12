@@ -2,7 +2,7 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { Container, Modal } from '../../entities';
-import { Btn, Input } from 'src/shared';
+import { Btn, Input } from '../../shared';
 
 export const Store: React.FC = () => {
   const [inputValue, setInputValue] = React.useState<string>('');

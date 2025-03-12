@@ -35,7 +35,7 @@ export const RangeSlider: React.FC<IRangeSlider> = ({ min, max, onChange }) => {
   }, [minVal, maxVal, onChange]);
 
   return (
-    <>
+    <form className="w-full h-6 pt-2">
       <input
         type="range"
         min={min}
@@ -47,7 +47,7 @@ export const RangeSlider: React.FC<IRangeSlider> = ({ min, max, onChange }) => {
           setMinVal(value);
           ev.target.value = value.toString();
         }}
-        className={clsx(minVal > max - 100 ? 'z-50' : 'z-30')}
+        className={clsx(minVal > max - 100 ? 'z-30' : 'z-40')}
       />
       <input
         type="range"
@@ -66,6 +66,6 @@ export const RangeSlider: React.FC<IRangeSlider> = ({ min, max, onChange }) => {
         <div className="w-full h-1 bg-b-100 rounded-sm z-10 absolute" />
         <div ref={range} className="h-1 bg-b-300 rounded-sm absolute z-20" />
       </div>
-    </>
+    </form>
   );
 };

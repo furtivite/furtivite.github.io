@@ -1,10 +1,10 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import { BrowserRouter, Route, RouteProps, Routes } from 'react-router';
+import { BrowserRouter, NavLink, Route, RouteProps, Router, Routes, useLocation } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import './tailwind.css';
 import { Layout } from '../entities';
-import { AccountServicePage, Store, StoreBasket, StoreCard, StoreList } from '../pages';
+import { AccountServicePage, ProfilePage, Store, StoreBasket, StoreCard, StoreList } from '../pages';
 import { defaultContext, ELangVariables, EThemeVariables, IStoreContext, StoreContext } from './StoreContext';
 
 function App() {
@@ -29,6 +29,10 @@ function App() {
     {
       path: '/account-service',
       element: <AccountServicePage />,
+    },
+    {
+      path: '/profile',
+      element: <ProfilePage />,
     },
   ];
   const { theme, lang } = contextValue;
@@ -74,36 +78,46 @@ function App() {
       path: '/account-service',
       text: t('tempLinks.toAccountService'),
     },
+    {
+      path: '/profile',
+      text: t('tempLinks.toProfilePage'),
+    },
   ];
-  const currentUrl = window.location.pathname;
+  // const currentUrl = window.location.pathname;
   // END TODO
 
   return (
     <StoreContext.Provider value={{ theme, lang, themeSwitchHandler, langSwitchHandler }}>
-      <Layout>
-        {/* TODO: Delete this Links and translation in future */}
-        <nav className="container mx-auto my-4 px-3">
-          <ol className="flex gap-2">
-            {tempLinks.map((item) =>
-              item.path !== currentUrl ? (
+      <BrowserRouter>
+        <Layout>
+          {/* TODO: Delete this Links and translation in future */}
+          <nav className="container mx-auto my-4 px-3">
+            <ol className="flex flex-wrap gap-2">
+              {tempLinks.map((item) => (
                 <li key={nanoid()}>
-                  <a href={item.path}>{item.text}</a>
+                  <NavLink
+                    className={({ isActive }) =>
+                      [isActive ? 'bg-black text-white' : '', 'p-1 hover:text-white hover:bg-slate-400 rounded'].join(
+                        ' '
+                      )
+                    }
+                    to={item.path}
+                  >
+                    {item.text}
+                  </NavLink>
                 </li>
-              ) : (
-                <React.Fragment key={nanoid()}></React.Fragment>
-              )
-            )}
-          </ol>
-        </nav>
-        {/* END TODO */}
-        <BrowserRouter>
+              ))}
+            </ol>
+          </nav>
+          {/* END TODO */}
+
           <Routes>
             {pages.map((item) => (
               <Route key={nanoid()} path={item.path} element={item.element} />
             ))}
           </Routes>
-        </BrowserRouter>
-      </Layout>
+        </Layout>
+      </BrowserRouter>
     </StoreContext.Provider>
   );
 }
