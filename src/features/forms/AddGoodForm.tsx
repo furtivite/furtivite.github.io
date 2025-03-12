@@ -2,27 +2,20 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
-import { goods } from '../../assets/goods';
 import { EThemeVariables, StoreContext } from '../../app/StoreContext';
 import { Btn } from '../../shared';
-import { IGoodsItem } from 'src/entities/interfaces';
-import { generateRandomNumber } from '../generators';
+import { IGoodsItem } from '../../entities/interfaces';
 
-export const AddGoodForm: React.FC = () => {
-  const {
-    handleSubmit,
-    register,
-    reset,
-    formState: { errors },
-  } = useForm<IGoodsItem>();
-  const [lastId, setLastId] = React.useState<number>(goods[goods.length - 1].id);
+interface IAddGoodForm {
+  /** Новый id */
+  newId: number;
+  /** функция сабмита формы */
+  onSubmit: (data: Partial<IGoodsItem>) => void;
+}
+
+export const AddGoodForm: React.FC<IAddGoodForm> = ({ newId, onSubmit }) => {
+  const { handleSubmit, register } = useForm<IGoodsItem>();
   const { t } = useTranslation();
-
-  const onSubmit = (data: Partial<IGoodsItem>): void => {
-    setLastId(lastId + 1);
-    console.log('Form :', data);
-    reset();
-  };
 
   const { theme } = React.useContext(StoreContext);
   const isDarkTheme = theme === EThemeVariables.DARK;
@@ -40,29 +33,30 @@ export const AddGoodForm: React.FC = () => {
       <label htmlFor="id" className="pt-2">
         ID:
       </label>
-      <input id="id" value={lastId} className={className} disabled />
+      <input id="id" value={newId} className={className} disabled />
       <label htmlFor="title" className="pt-2">
         {t('forms.goods.title')}
       </label>
       <input
         {...register('title', {
-          value: `Some cool goods ${lastId}`,
+          value: '',
           required: true,
         })}
         id="title"
         className={className}
+        placeholder={t('forms.goods.titlePlaceholder')}
       />
       <label htmlFor="details" className="pt-2">
         {t('forms.goods.details')}
       </label>
       <textarea
         {...register('details', {
-          value:
-            'Curabitur tincidunt ex vel magna iaculis varius. Duis eleifend ligula vitae lectus cursus, eu luctus leo rutrum. ',
+          value: '',
           required: true,
         })}
         className={className}
         name="details"
+        placeholder={t('forms.goods.detailsPlaceholder')}
         required
       />
       <label htmlFor="price" className="pt-2">
@@ -70,10 +64,11 @@ export const AddGoodForm: React.FC = () => {
       </label>
       <input
         {...register('price', {
-          value: generateRandomNumber(50, 250),
+          value: Number(''),
           required: true,
         })}
         id="price"
+        placeholder={t('forms.goods.pricePlaceholder')}
         className={className}
       />
       <Btn type="submit">{t('forms.submit')}</Btn>

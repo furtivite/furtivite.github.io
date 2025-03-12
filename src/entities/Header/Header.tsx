@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router';
 import { LangSwitcherBtn, Logo, ThemeSwitcherBtn } from '../../shared';
 import { ELogoType } from '../../shared/interfaces';
 import { EThemeVariables, StoreContext } from '../../app/StoreContext';
@@ -17,9 +18,9 @@ export const Header: React.FC = () => {
   return (
     <header className={className}>
       <div className="flex flex-row justify-between items-center container mx-auto px-3">
-        <a href="/">
+        <NavLink to="/">
           <Logo type={ELogoType.DARK} text={t('storeName')} />
-        </a>
+        </NavLink>
         <div className="flex flex-row justify-between items-center gap-4">
           <ThemeSwitcherBtn />
           <LangSwitcherBtn />

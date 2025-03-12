@@ -28,6 +28,9 @@ module.exports = {
           400: '#83B18B',
         },
       },
+      zIndex: {
+        90: '90',
+      },
     },
     fontFamily: {
       inter: ['Inter', 'sans-serif'],
