@@ -49,6 +49,12 @@ export const StoreList: React.FC = () => {
     setIsModalVisible(!isModalVisible);
   };
 
+  React.useEffect(() => {
+    if (window.location.pathname.includes('modal')) {
+      setIsModalVisible(true);
+    }
+  }, []);
+
   return (
     <>
       <Container>
