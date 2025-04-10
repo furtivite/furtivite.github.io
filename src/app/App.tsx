@@ -1,6 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import { BrowserRouter, NavLink, Route, RouteProps, Router, Routes, useLocation } from 'react-router';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import './tailwind.css';
 import { Layout } from '../entities';
@@ -9,32 +9,6 @@ import { defaultContext, ELangVariables, EThemeVariables, IStoreContext, StoreCo
 
 function App() {
   const [contextValue, setContextValue] = React.useState<IStoreContext>(defaultContext);
-  const pages: RouteProps[] = [
-    {
-      path: '/',
-      element: <Store />,
-    },
-    {
-      path: '/basket',
-      element: <StoreBasket />,
-    },
-    {
-      path: '/card/:id',
-      element: <StoreCard />,
-    },
-    {
-      path: '/list',
-      element: <StoreList />,
-    },
-    {
-      path: '/account-service',
-      element: <AccountServicePage />,
-    },
-    {
-      path: '/profile',
-      element: <ProfilePage />,
-    },
-  ];
   const { theme, lang } = contextValue;
   const { i18n, t } = useTranslation();
 
@@ -112,9 +86,13 @@ function App() {
           {/* END TODO */}
 
           <Routes>
-            {pages.map((item) => (
-              <Route key={nanoid()} path={item.path} element={item.element} />
-            ))}
+            <Route key={nanoid()} path="/" element={<Store />} />
+            <Route key={nanoid()} path="/basket" element={<StoreBasket />} />
+            <Route key={nanoid()} path="/card/:id" element={<StoreCard />} />
+            <Route key={nanoid()} path="/list" element={<StoreList />} />
+            <Route key={nanoid()} path="/list/modal" element={<StoreList />} />
+            <Route key={nanoid()} path="/account-service" element={<AccountServicePage />} />
+            <Route key={nanoid()} path="/profile" element={<ProfilePage />} />
           </Routes>
         </Layout>
       </BrowserRouter>
