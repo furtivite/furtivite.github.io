@@ -86,13 +86,13 @@ function App() {
           {/* END TODO */}
 
           <Routes>
-            <Route key={nanoid()} path="/" element={<Store />} />
-            <Route key={nanoid()} path="/basket" element={<StoreBasket />} />
-            <Route key={nanoid()} path="/card/:id" element={<StoreCard />} />
-            <Route key={nanoid()} path="/list" element={<StoreList />} />
-            <Route key={nanoid()} path="/list/modal" element={<StoreList />} />
-            <Route key={nanoid()} path="/account-service" element={<AccountServicePage />} />
-            <Route key={nanoid()} path="/profile" element={<ProfilePage />} />
+            <Route path="/" element={<Store />} />
+            <Route path="/basket" element={<StoreBasket />} />
+            <Route path="/card/:id" element={<StoreCard />} />
+            <Route path="/list" element={<StoreList />} />
+            <Route path="/list/modal" element={<StoreList />} />
+            <Route path="/account-service" element={<AccountServicePage />} />
+            <Route path="/profile" element={<ProfilePage />} />
           </Routes>
         </Layout>
       </BrowserRouter>
