@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { createPortal } from 'react-dom';
 import { goods } from '../../assets/goods';
-import { AsideFlter, AsideLayout, Container, Modal, ShortCard } from '../../entities';
+import { AsideFlter, AsideLayout, Container, Layout, Modal, ShortCard } from '../../entities';
 import { IGoodsItem } from '../../entities/interfaces';
 import { Btn, RangeSlider } from '../../shared';
 import { generateRandomCardList } from '../../features/generators';
@@ -56,7 +56,7 @@ export const StoreList: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <Layout>
       <Container>
         <div className="flex items-start gap-[21px]">
           <AsideLayout>
@@ -88,6 +88,6 @@ export const StoreList: React.FC = () => {
           </Modal>,
           document.body
         )}
-    </>
+    </Layout>
   );
 };

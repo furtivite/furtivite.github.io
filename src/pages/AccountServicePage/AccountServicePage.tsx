@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Container } from '../../entities';
+import { Container, Layout } from '../../entities';
 import { AccountService, ProductType, UserType } from '../../features/AccountService';
 
 export const AccountServicePage: React.FC = () => {
@@ -22,6 +22,7 @@ export const AccountServicePage: React.FC = () => {
   const { t } = useTranslation();
 
   return (
+    <Layout>
     <Container>
       <ul className="mb-4">
         <li>
@@ -41,5 +42,6 @@ export const AccountServicePage: React.FC = () => {
         {t('accountServicePage.finalPrice')} {finalPrice.toLocaleString()}&nbsp;₽
       </p>
     </Container>
+    </Layout>
   );
 };

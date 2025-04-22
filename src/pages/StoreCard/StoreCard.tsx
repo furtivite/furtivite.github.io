@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import { Container, FullCard } from '../../entities';
+import { Container, FullCard, Layout } from '../../entities';
 import { goods } from '../../assets/goods';
 
 export const StoreCard: React.FC = () => {
@@ -9,6 +9,7 @@ export const StoreCard: React.FC = () => {
   const item = goods[itemPlace];
 
   return (
+    <Layout>
     <Container>
       <FullCard
         id={item.id}
@@ -22,5 +23,6 @@ export const StoreCard: React.FC = () => {
         sizes={item.sizes}
       />
     </Container>
+    </Layout>
   );
 };

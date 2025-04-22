@@ -1,7 +1,7 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
-import { Container, Modal } from '../../entities';
+import { Container, Layout, Modal } from '../../entities';
 import { Btn, Input } from '../../shared';
 
 export const Store: React.FC = () => {
@@ -26,7 +26,7 @@ export const Store: React.FC = () => {
   };
 
   return (
-    <>
+    <Layout>
       <Container>
         <div className="flex gap-3">
           <div className="flex w-[75%]">
@@ -44,6 +44,6 @@ export const Store: React.FC = () => {
           </Modal>,
           document.body
         )}
-    </>
+    </Layout>
   );
 };
