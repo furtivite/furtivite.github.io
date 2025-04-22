@@ -2,14 +2,17 @@ import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/store/hooks';
 import { Container, Layout } from '../../entities';
 import { Btn } from '../../shared';
-import { setToken } from '../../features/auth/authSlice';
+import { logout, setToken } from '../../features/auth/authSlice';
 import { nanoid } from 'nanoid';
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 export const Login: React.FC = () => {
+    const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const generateToken = nanoid();
     const navigate = useNavigate();
+    const myToken = useAppSelector((state) => state.auth.token);
 
     const loginHandler = () => {
         dispatch(setToken(generateToken));
@@ -21,11 +24,20 @@ export const Login: React.FC = () => {
         navigate('/');
     };
 
+    const logoutHandler = () => {
+        dispatch(logout());
+    };
+
     return (
-    <Container>
-        <div className='grid gap-4'>
-            <Btn onClick={loginHandler}>Login User</Btn>
-            <Btn onClick={loginAdminHandler}>Login Admin</Btn>
-        </div>
-    </Container>
-)}
+        <Container>
+            <div className='grid gap-4'>
+                <a href='/'>{t('tempLinks.toMain')}</a>
+                <Btn onClick={loginHandler}>Login User</Btn>
+                <Btn onClick={loginAdminHandler}>Login Admin</Btn>
+                {myToken !== null && (
+                    <Btn onClick={logoutHandler}>Logout</Btn>
+                )}
+            </div>
+        </Container>
+    )
+}
