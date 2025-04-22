@@ -6,6 +6,8 @@ import './tailwind.css';
 import { Layout } from '../entities';
 import { AccountServicePage, ProfilePage, Store, StoreBasket, StoreCard, StoreList } from '../pages';
 import { defaultContext, ELangVariables, EThemeVariables, IStoreContext, StoreContext } from './StoreContext';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 function App() {
   const [contextValue, setContextValue] = React.useState<IStoreContext>(defaultContext);
@@ -61,42 +63,44 @@ function App() {
   // END TODO
 
   return (
-    <StoreContext.Provider value={{ theme, lang, themeSwitchHandler, langSwitchHandler }}>
-      <BrowserRouter>
-        <Layout>
-          {/* TODO: Delete this Links and translation in future */}
-          <nav className="container mx-auto my-4 px-3">
-            <ol className="flex flex-wrap gap-2">
-              {tempLinks.map((item) => (
-                <li key={nanoid()}>
-                  <NavLink
-                    className={({ isActive }) =>
-                      [isActive ? 'bg-black text-white' : '', 'p-1 hover:text-white hover:bg-slate-400 rounded'].join(
-                        ' '
-                      )
-                    }
-                    to={item.path}
-                  >
-                    {item.text}
-                  </NavLink>
-                </li>
-              ))}
-            </ol>
-          </nav>
-          {/* END TODO */}
+    <Provider store={store}>
+      <StoreContext.Provider value={{ theme, lang, themeSwitchHandler, langSwitchHandler }}>
+        <BrowserRouter>
+          <Layout>
+            {/* TODO: Delete this Links and translation in future */}
+            <nav className="container mx-auto my-4 px-3">
+              <ol className="flex flex-wrap gap-2">
+                {tempLinks.map((item) => (
+                  <li key={nanoid()}>
+                    <NavLink
+                      className={({ isActive }) =>
+                        [isActive ? 'bg-black text-white' : '', 'p-1 hover:text-white hover:bg-slate-400 rounded'].join(
+                          ' '
+                        )
+                      }
+                      to={item.path}
+                    >
+                      {item.text}
+                    </NavLink>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+            {/* END TODO */}
 
-          <Routes>
-            <Route path="/" element={<Store />} />
-            <Route path="/basket" element={<StoreBasket />} />
-            <Route path="/card/:id" element={<StoreCard />} />
-            <Route path="/list" element={<StoreList />} />
-            <Route path="/list/modal" element={<StoreList />} />
-            <Route path="/account-service" element={<AccountServicePage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
-    </StoreContext.Provider>
+            <Routes>
+              <Route path="/" element={<Store />} />
+              <Route path="/basket" element={<StoreBasket />} />
+              <Route path="/card/:id" element={<StoreCard />} />
+              <Route path="/list" element={<StoreList />} />
+              <Route path="/list/modal" element={<StoreList />} />
+              <Route path="/account-service" element={<AccountServicePage />} />
+              <Route path="/profile" element={<ProfilePage />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </StoreContext.Provider>
+    </Provider>
   );
 }
 
