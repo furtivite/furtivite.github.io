@@ -23,25 +23,25 @@ export const AccountServicePage: React.FC = () => {
 
   return (
     <Layout>
-    <Container>
-      <ul className="mb-4">
-        <li>
-          {t('accountServicePage.userDiscount')} {userDiscount * 100}%
-        </li>
-        <li>
-          {t('accountServicePage.userProductDiscount')} {userProductDiscount * 100}%
-        </li>
-      </ul>
-      <p className="mb-8">
-        {t('accountServicePage.commonDiscount')} {commonDiscount}%
-      </p>
-      <p className="mb-4">
-        {t('accountServicePage.initialPrice')} {initialPrice.toLocaleString()}&nbsp;₽
-      </p>
-      <p>
-        {t('accountServicePage.finalPrice')} {finalPrice.toLocaleString()}&nbsp;₽
-      </p>
-    </Container>
+      <Container>
+        <ul className="mb-4">
+          <li>
+            {t('accountServicePage.userDiscount')} {userDiscount * 100}%
+          </li>
+          <li>
+            {t('accountServicePage.userProductDiscount')} {userProductDiscount * 100}%
+          </li>
+        </ul>
+        <p className="mb-8">
+          {t('accountServicePage.commonDiscount')} {commonDiscount}%
+        </p>
+        <p className="mb-4">
+          {t('accountServicePage.initialPrice')} {initialPrice.toLocaleString()}&nbsp;₽
+        </p>
+        <p>
+          {t('accountServicePage.finalPrice')} {finalPrice.toLocaleString()}&nbsp;₽
+        </p>
+      </Container>
     </Layout>
   );
 };

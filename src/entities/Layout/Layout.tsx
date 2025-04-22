@@ -3,8 +3,6 @@ import clsx from 'clsx';
 import { Header } from '../../entities';
 import { ILayout } from '../../entities/interfaces';
 import { EThemeVariables, StoreContext } from '../../app/StoreContext';
-import { initApp } from '../../features/app/appSlice';
-import { useAppDispatch, useAppSelector } from 'src/app/store/hooks';
 import { NavLink } from 'react-router';
 import { nanoid } from 'nanoid';
 import { useTranslation } from 'react-i18next';
@@ -13,18 +11,7 @@ export const Layout: React.FC<ILayout> = ({ children }: ILayout) => {
   const { theme, lang } = React.useContext(StoreContext);
   const className = clsx('relative min-h-screen', theme === EThemeVariables.DARK ? 'bg-black text-w-100' : '');
 
-  // TODO: ПЕРЕНЕСТИ В app
-  const dispatch = useAppDispatch();
-  const isInitApp = useAppSelector((state) => state.app.isInit);
-
-  // console.log(isInitApp);
-  // END
-
   const { t } = useTranslation();
-
-  React.useEffect(() => {
-    dispatch(initApp())
-  }, [])
 
   // TODO: Delete this Links and translation in future
   const tempLinks = [
@@ -55,11 +42,11 @@ export const Layout: React.FC<ILayout> = ({ children }: ILayout) => {
     {
       path: '/login',
       text: 'Login',
-    }
+    },
   ];
   // const currentUrl = window.location.pathname;
   // END TODO
-  
+
   return (
     <div className={className} lang={lang}>
       <Header />
@@ -70,9 +57,7 @@ export const Layout: React.FC<ILayout> = ({ children }: ILayout) => {
             <li key={nanoid()}>
               <NavLink
                 className={({ isActive }) =>
-                  [isActive ? 'bg-black text-white' : '', 'p-1 hover:text-white hover:bg-slate-400 rounded'].join(
-                    ' '
-                  )
+                  [isActive ? 'bg-black text-white' : '', 'p-1 hover:text-white hover:bg-slate-400 rounded'].join(' ')
                 }
                 to={item.path}
               >

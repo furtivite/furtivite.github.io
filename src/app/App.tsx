@@ -1,14 +1,13 @@
 import React from 'react';
-import { nanoid } from 'nanoid';
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router';
+import { BrowserRouter, Route, Routes } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import './tailwind.css';
-import { Layout } from '../entities';
 import { AccountServicePage, ProfilePage, Store, StoreBasket, StoreCard, StoreList, Login } from '../pages';
 import { defaultContext, ELangVariables, EThemeVariables, IStoreContext, StoreContext } from './StoreContext';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
-import { useAppSelector } from './store/hooks';
+import { useAppDispatch, useAppSelector } from './store/hooks';
+import { initApp } from 'src/features/app/appSlice';
 
 function App() {
   const [contextValue, setContextValue] = React.useState<IStoreContext>(defaultContext);
@@ -33,12 +32,20 @@ function App() {
     }
   };
 
+  const dispatch = useAppDispatch();
+  const isInitApp = useAppSelector((state) => state.app.isInit);
+
+  React.useEffect(() => {
+    dispatch(initApp());
+    console.log(isInitApp);
+  }, [dispatch, isInitApp]);
+
   return (
     <Provider store={store}>
       <StoreContext.Provider value={{ theme, lang, themeSwitchHandler, langSwitchHandler }}>
         <BrowserRouter>
-        <Routes>
-            <Route path='/login' element={<Login />} />
+          <Routes>
+            <Route path="/login" element={<Login />} />
             <Route path="/" element={<Store />} />
             <Route path="/basket" element={<StoreBasket />} />
             <Route path="/card/:id" element={<StoreCard />} />

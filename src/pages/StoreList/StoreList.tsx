@@ -70,9 +70,7 @@ export const StoreList: React.FC = () => {
               <div className="mb-2">
                 <RangeSlider min={0} max={100} onChange={changePriceFilter} />
               </div>
-              {isAdmin && (
-                <Btn onClick={changeModalVisibility}>{t('listPage.addGoodToStore')}</Btn>
-              )}
+              {isAdmin && <Btn onClick={changeModalVisibility}>{t('listPage.addGoodToStore')}</Btn>}
             </AsideFlter>
           </AsideLayout>
           <section>

@@ -18,9 +18,7 @@ export const ProfilePage: React.FC = () => {
       <Container>
         <div className="max-w-xs grid gap-4">
           <ProfileForm />
-          {myToken !== null && (
-            <Btn onClick={logoutHandler}>Logout</Btn>
-          )}
+          {myToken !== null && <Btn onClick={logoutHandler}>Logout</Btn>}
         </div>
       </Container>
     </Layout>

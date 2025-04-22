@@ -5,9 +5,9 @@ import { IBasketGoodsItem } from '../../../entities/interfaces';
 import { EThemeVariables, StoreContext } from '../../../app/StoreContext';
 import { Counter, DeleteBtn } from '../../../shared';
 
-const ImagePlace: React.FC<Partial<IBasketGoodsItem>> = ({ image }) => (
+const ImagePlace: React.FC<Partial<IBasketGoodsItem>> = ({ imageListing }) => (
   <div className="flex justify-center items-center w-20 h-20 bg-w-100 rounded overflow-hidden">
-    <img className="max-w-16" src={image} alt="" />
+    <img className="max-w-16" src={imageListing} alt="" />
   </div>
 );
 
@@ -40,6 +40,7 @@ const DesccriptionPlace: React.FC<Props> = ({ color, title, size, isDarkTheme })
 const CounterPlace: React.FC<Props> = ({ price, counter, isDarkTheme }) => {
   const w900ClassName = isDarkTheme ? 'text-w-900' : 'text-b-900';
   const priceClassName = clsx('font text-sm text-b-900 leading-7', w900ClassName);
+
   return (
     <div className="flex justify-end items-center gap-8">
       <p className={priceClassName}>${price}</p>
@@ -51,7 +52,7 @@ const CounterPlace: React.FC<Props> = ({ price, counter, isDarkTheme }) => {
   );
 };
 
-export const BasketGoodsItem: React.FC<IBasketGoodsItem> = ({ size, color, counter, title, price, image }) => {
+export const BasketGoodsItem: React.FC<IBasketGoodsItem> = ({ size, color, counter, title, price, imageListing }) => {
   const { theme } = React.useContext(StoreContext);
 
   const isDarkTheme = theme === EThemeVariables.DARK;
@@ -59,7 +60,7 @@ export const BasketGoodsItem: React.FC<IBasketGoodsItem> = ({ size, color, count
   return (
     <article className="flex justify-between font-inter">
       <div className="flex items-center gap-8">
-        <ImagePlace image={image} />
+        <ImagePlace imageListing={imageListing} />
         <DesccriptionPlace color={color} title={title} size={size} isDarkTheme={isDarkTheme} />
       </div>
       <CounterPlace price={price} counter={counter} isDarkTheme={isDarkTheme} />

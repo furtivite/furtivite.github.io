@@ -7,16 +7,17 @@ export const StoreBasket: React.FC = () => {
 
   return (
     <Layout>
-    <Container>
-      <BasketGoodsItem
-        size={item.sizes[0]}
-        color={item.colors[0]}
-        counter={1}
-        title={item.title}
-        price={item.price}
-        image={item.imageListing}
-      />
-    </Container>
+      <Container>
+        <BasketGoodsItem
+          id={item.id}
+          size={item.sizes[0]}
+          color={item.colors[0]}
+          counter={1}
+          title={item.title}
+          price={item.price}
+          imageListing={item.imageListing}
+        />
+      </Container>
     </Layout>
   );
 };

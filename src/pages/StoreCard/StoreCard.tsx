@@ -10,19 +10,19 @@ export const StoreCard: React.FC = () => {
 
   return (
     <Layout>
-    <Container>
-      <FullCard
-        id={item.id}
-        title={item.title}
-        price={item.price}
-        details={item.details}
-        imageListing={item.imageListing}
-        imageFull={item.imageFull}
-        isInStock={item.isInStock}
-        colors={item.colors}
-        sizes={item.sizes}
-      />
-    </Container>
+      <Container>
+        <FullCard
+          id={item.id}
+          title={item.title}
+          price={item.price}
+          details={item.details}
+          imageListing={item.imageListing}
+          imageFull={item.imageFull}
+          isInStock={item.isInStock}
+          colors={item.colors}
+          sizes={item.sizes}
+        />
+      </Container>
     </Layout>
   );
 };
