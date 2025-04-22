@@ -1,10 +1,7 @@
-import { EGoodsSizes } from '../../entities/interfaces';
+import { EGoodsSizes, ICommonGoodsItem } from '../../entities/interfaces';
 
-export interface IBasketGoodsItem {
+export interface IBasketGoodsItem extends ICommonGoodsItem {
   size: EGoodsSizes;
   color: string;
   counter: number;
-  title: string;
-  price: number;
-  image: string;
 }

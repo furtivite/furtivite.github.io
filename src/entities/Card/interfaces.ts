@@ -13,13 +13,16 @@ export interface IGoodsSizes {
   sizes: EGoodsSizes[];
 }
 
-export interface IGoodsItem extends IGoogsColor, IGoodsSizes {
+export interface ICommonGoodsItem {
   id: number;
-  isInStock: boolean;
   title: string;
-  details: string | string[];
-  price: number;
   imageListing: string;
+  price: number;
+}
+
+export interface IGoodsItem extends ICommonGoodsItem, IGoogsColor, IGoodsSizes {
+  isInStock: boolean;
+  details: string | string[];
   imageFull: string[];
   colors: string[];
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Container } from '../../entities';
+import { Container, Layout } from '../../entities';
 import { AccountService, ProductType, UserType } from '../../features/AccountService';
 
 export const AccountServicePage: React.FC = () => {
@@ -22,24 +22,26 @@ export const AccountServicePage: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Container>
-      <ul className="mb-4">
-        <li>
-          {t('accountServicePage.userDiscount')} {userDiscount * 100}%
-        </li>
-        <li>
-          {t('accountServicePage.userProductDiscount')} {userProductDiscount * 100}%
-        </li>
-      </ul>
-      <p className="mb-8">
-        {t('accountServicePage.commonDiscount')} {commonDiscount}%
-      </p>
-      <p className="mb-4">
-        {t('accountServicePage.initialPrice')} {initialPrice.toLocaleString()}&nbsp;₽
-      </p>
-      <p>
-        {t('accountServicePage.finalPrice')} {finalPrice.toLocaleString()}&nbsp;₽
-      </p>
-    </Container>
+    <Layout>
+      <Container>
+        <ul className="mb-4">
+          <li>
+            {t('accountServicePage.userDiscount')} {userDiscount * 100}%
+          </li>
+          <li>
+            {t('accountServicePage.userProductDiscount')} {userProductDiscount * 100}%
+          </li>
+        </ul>
+        <p className="mb-8">
+          {t('accountServicePage.commonDiscount')} {commonDiscount}%
+        </p>
+        <p className="mb-4">
+          {t('accountServicePage.initialPrice')} {initialPrice.toLocaleString()}&nbsp;₽
+        </p>
+        <p>
+          {t('accountServicePage.finalPrice')} {finalPrice.toLocaleString()}&nbsp;₽
+        </p>
+      </Container>
+    </Layout>
   );
 };

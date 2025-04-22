@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import { Container, FullCard } from '../../entities';
+import { Container, FullCard, Layout } from '../../entities';
 import { goods } from '../../assets/goods';
 
 export const StoreCard: React.FC = () => {
@@ -9,18 +9,20 @@ export const StoreCard: React.FC = () => {
   const item = goods[itemPlace];
 
   return (
-    <Container>
-      <FullCard
-        id={item.id}
-        title={item.title}
-        price={item.price}
-        details={item.details}
-        imageListing={item.imageListing}
-        imageFull={item.imageFull}
-        isInStock={item.isInStock}
-        colors={item.colors}
-        sizes={item.sizes}
-      />
-    </Container>
+    <Layout>
+      <Container>
+        <FullCard
+          id={item.id}
+          title={item.title}
+          price={item.price}
+          details={item.details}
+          imageListing={item.imageListing}
+          imageFull={item.imageFull}
+          isInStock={item.isInStock}
+          colors={item.colors}
+          sizes={item.sizes}
+        />
+      </Container>
+    </Layout>
   );
 };

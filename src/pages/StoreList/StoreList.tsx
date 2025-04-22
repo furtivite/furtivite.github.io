@@ -4,12 +4,13 @@ import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { createPortal } from 'react-dom';
 import { goods } from '../../assets/goods';
-import { AsideFlter, AsideLayout, Container, Modal, ShortCard } from '../../entities';
+import { AsideFlter, AsideLayout, Container, Layout, Modal, ShortCard } from '../../entities';
 import { IGoodsItem } from '../../entities/interfaces';
 import { Btn, RangeSlider } from '../../shared';
 import { generateRandomCardList } from '../../features/generators';
 import { AddGoodForm } from '../../features/forms';
 import { IRangeSliderChange } from '../../shared/interfaces';
+import { useAppSelector } from '../../app/store/hooks';
 
 export const StoreList: React.FC = () => {
   const [myGoods, setMyGoods] = React.useState<IGoodsItem[]>([]);
@@ -49,6 +50,11 @@ export const StoreList: React.FC = () => {
     setIsModalVisible(!isModalVisible);
   };
 
+  const myToken = useAppSelector((state) => state.auth.token);
+  const isAdmin = myToken !== null && myToken.includes('admin_');
+
+  console.log(isAdmin);
+
   React.useEffect(() => {
     if (window.location.pathname.includes('modal')) {
       setIsModalVisible(true);
@@ -56,7 +62,7 @@ export const StoreList: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <Layout>
       <Container>
         <div className="flex items-start gap-[21px]">
           <AsideLayout>
@@ -64,7 +70,7 @@ export const StoreList: React.FC = () => {
               <div className="mb-2">
                 <RangeSlider min={0} max={100} onChange={changePriceFilter} />
               </div>
-              <Btn onClick={changeModalVisibility}>{t('listPage.addGoodToStore')}</Btn>
+              {isAdmin && <Btn onClick={changeModalVisibility}>{t('listPage.addGoodToStore')}</Btn>}
             </AsideFlter>
           </AsideLayout>
           <section>
@@ -88,6 +94,6 @@ export const StoreList: React.FC = () => {
           </Modal>,
           document.body
         )}
-    </>
+    </Layout>
   );
 };
